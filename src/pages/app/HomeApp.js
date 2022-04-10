@@ -8,49 +8,31 @@ import {Link as RouterLink, useNavigate} from 'react-router-dom';
 
 // ----------------------------------------------------------------------
 
+
+const subjects = ['Biology','Physics', 'Mathematics', 'PE', 'Shona', 'VPA', 'Computer_Science','English']
+
+
+
 export default function HomeApp() {
 
-    const navigate = useNavigate();
 
-    const handleClick= (event) => {
-        console.log('yes');
-        navigate('/app/quiz', { replace: true });
-    };
 
 
     return (
-        <Page title="Dashboard | Minimal-UI">
+        <Page title="Dashboard | Home">
             <Container maxWidth="xl">
+
+
                 <Box sx={{ pb: 5 }}>
                     <Typography variant="h4">Hi, Welcome back</Typography>
                 </Box>
                 <Grid container spacing={3}>
-                    <Grid item xs={12} sm={6} md={3}>
-                        <AppSubject subject='' onClick={handleClick()}/>
-                    </Grid>
-                    <Grid item xs={12} sm={6} md={3}>
-                        <AppSubject onClick={handleClick()} />
-                    </Grid>
-                    <Grid item xs={12} sm={6} md={3}>
-                        <AppSubject onClick={handleClick()} />
-                    </Grid>
-                    <Grid item xs={12} sm={6} md={3}>
-                        <AppSubject onClick={handleClick()}/>
-                    </Grid>
 
-                    <Grid item xs={12} sm={6} md={3}>
-                        <AppSubject onClick={handleClick()} />
-                    </Grid>
-                    <Grid item xs={12} sm={6} md={3}>
-                        <AppSubject onClick={handleClick()}/>
-                    </Grid>
-                    <Grid item xs={12} sm={6} md={3}>
-                        <AppSubject onClick={handleClick()} />
-                    </Grid>
-                    <Grid item xs={12} sm={6} md={3}>
-                        <AppSubject onClick={handleClick()} />
-                    </Grid>
-
+                    {subjects.map(subject =>(
+                        <Grid item xs={12} sm={6} md={3}>
+                            <AppSubject subject={subject} />
+                        </Grid>
+                    ))}
 
                 </Grid>
             </Container>

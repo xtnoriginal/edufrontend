@@ -5,7 +5,7 @@ import {Card, Link, Typography} from '@mui/material';
 import { fShortenNumber } from '../../../utils/formatNumber';
 // component
 import Iconify from '../../../components/Iconify';
-import {Link as RouterLink} from "react-router-dom";
+import {Link as RouterLink, useNavigate} from "react-router-dom";
 
 // ----------------------------------------------------------------------
 
@@ -31,22 +31,44 @@ const IconWrapperStyle = styled('div')(({ theme }) => ({
         theme.palette.info.dark,
         0.24
     )} 100%)`
+
 }));
 
 // ----------------------------------------------------------------------
 
-const TOTAL = 'Physics';
 
-export default function AppSubject() {
+const icons = {
+    Chemistry : 'ic:baseline-science',
+    Mathematics: 'tabler:numbers',
+    Biology:'ic:outline-biotech',
+    Physics: 'ic:baseline-science',
+    PE: 'icon-park-outline:sport',
+    Shona: 'icon-park-outline:traditional-chinese-medicine',
+    VPA:'emojione-monotone:performing-arts',
+    English: 'icon-park-outline:english',
+    Computer_Science: 'charm:binary'
+}
+
+
+export default function AppSubject(props) {
+
+
+
+
+
+
+    const subject = props.subject;
     return (
-        <RootStyle>
+        <Link underline='none' to={{pathname:'subject',state:subject}} component={RouterLink}>
+            <RootStyle >
 
-                <IconWrapperStyle>
-                    <Iconify icon="ic:baseline-science" width={24} height={24} />
-                </IconWrapperStyle>
-                <Typography variant="h3">Physics</Typography>
+                    <IconWrapperStyle>
+                        <Iconify icon={icons[subject]} width={24} height={24} />
+                    </IconWrapperStyle>
+                    <Typography variant="h3">{subject}</Typography>
 
-        </RootStyle>
+            </RootStyle>
+        </Link>
     );
 }
 

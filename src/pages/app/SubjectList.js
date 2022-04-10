@@ -72,7 +72,8 @@ function applySortFilter(array, comparator, query) {
     return stabilizedThis.map((el) => el[0]);
 }
 
-export default function SubjectList() {
+export default function SubjectList(props) {
+
     const [page, setPage] = useState(0);
     const [order, setOrder] = useState('asc');
     const [selected, setSelected] = useState([]);
@@ -144,7 +145,7 @@ export default function SubjectList() {
             <Container>
                 <Stack direction="row" alignItems="center" justifyContent="space-between" mb={5}>
                     <Typography variant="h4" gutterBottom>
-                        Physics
+                        subject
                     </Typography>
 
                 </Stack>

@@ -26,7 +26,7 @@ export default function Router() {
         { path: '', element: <HomeApp /> },
         { path: 'products', element: <Products /> },
         { path: 'blog', element: <Blog /> },
-        { path: 'physics', element: <SubjectList/> },
+        { path: 'subject', element: <SubjectList/> },
         { path: 'quiz', element: <Quiz/> }
       ]
     },
