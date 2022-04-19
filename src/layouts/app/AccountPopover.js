@@ -20,7 +20,7 @@ const MENU_OPTIONS = [
   {
     label: 'Profile',
     icon: 'eva:person-fill',
-    linkTo: '#'
+    linkTo: '/app/profile'
   },
   {
     label: 'Settings',

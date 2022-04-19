@@ -1,7 +1,7 @@
 import { filter } from 'lodash';
 import { sentenceCase } from 'change-case';
 import { useState } from 'react';
-import {Link as RouterLink, useNavigate} from 'react-router-dom';
+import {Link as RouterLink, useNavigate, useParams} from 'react-router-dom';
 // material
 import {
     Card,
@@ -72,7 +72,9 @@ function applySortFilter(array, comparator, query) {
     return stabilizedThis.map((el) => el[0]);
 }
 
-export default function SubjectList(props) {
+export default function SubjectList() {
+
+    let { id } = useParams();
 
     const [page, setPage] = useState(0);
     const [order, setOrder] = useState('asc');
@@ -131,7 +133,7 @@ export default function SubjectList(props) {
     const navigate = useNavigate();
 
     const handleClickByRow = (event) => {
-        navigate('/app/quiz', { replace: true });
+        navigate('/app/startquiz', { replace: true });
     };
 
     const emptyRows = page > 0 ? Math.max(0, (1 + page) * rowsPerPage - USERLIST.length) : 0;
@@ -145,7 +147,7 @@ export default function SubjectList(props) {
             <Container>
                 <Stack direction="row" alignItems="center" justifyContent="space-between" mb={5}>
                     <Typography variant="h4" gutterBottom>
-                        subject
+                        {id}
                     </Typography>
 
                 </Stack>
@@ -192,7 +194,7 @@ export default function SubjectList(props) {
                                                         </Stack>
                                                     </TableCell>
                                                     <TableCell align="left">2021</TableCell>
-                                                    <TableCell align="left">Physics</TableCell>
+                                                    <TableCell align="left">{id}</TableCell>
                                                     <TableCell align="left">{isVerified ? 'Yes' : 'No'}</TableCell>
                                                     <TableCell align="left">
                                                         <Label

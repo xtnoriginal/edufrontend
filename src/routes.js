@@ -14,6 +14,8 @@ import AppLayout from "./layouts/app";
 import HomeApp from "./pages/app/HomeApp";
 import SubjectList from "./pages/app/SubjectList";
 import Quiz from "./pages/quiz/Quiz";
+import StartQuiz from "./pages/quiz/StartQuiz";
+
 
 // ----------------------------------------------------------------------
 
@@ -26,8 +28,11 @@ export default function Router() {
         { path: '', element: <HomeApp /> },
         { path: 'products', element: <Products /> },
         { path: 'blog', element: <Blog /> },
-        { path: 'subject', element: <SubjectList/> },
-        { path: 'quiz', element: <Quiz/> }
+        { path: 'subject/:id', element: <SubjectList/> },
+        { path: 'quiz', element: <Quiz/> },
+        { path: 'startquiz', element: <StartQuiz/> },
+
+
       ]
     },
 

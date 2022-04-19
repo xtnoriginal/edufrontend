@@ -58,8 +58,11 @@ export default function AppSubject(props) {
 
 
     const subject = props.subject;
+    const link = 'subject/' +subject;
+
+
     return (
-        <Link underline='none' to={{pathname:'subject',state:subject}} component={RouterLink}>
+        <Link underline='none' to={link} component={RouterLink}>
             <RootStyle >
 
                     <IconWrapperStyle>
