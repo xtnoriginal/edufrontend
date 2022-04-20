@@ -15,12 +15,28 @@ import HomeApp from "./pages/app/HomeApp";
 import SubjectList from "./pages/app/SubjectList";
 import Quiz from "./pages/quiz/Quiz";
 import StartQuiz from "./pages/quiz/StartQuiz";
+import WebsiteLayout from "./layouts/website/WebsiteLayout";
+import Home from "./pages/website/Home";
+import About from "./pages/website/About";
+import Settings from "./pages/Settings";
+import Profile from "./pages/Profile";
 
 
 // ----------------------------------------------------------------------
 
 export default function Router() {
   return useRoutes([
+    {
+      path: '/',
+      element: <WebsiteLayout />,
+      children: [
+        { path: 'home', element: <Home/> },
+        { path: 'blog', element: <Blog /> },
+        { path: 'about', element: <About /> },
+
+
+      ]}
+      ,
     {
       path: '/app',
       element: <AppLayout />,
@@ -31,6 +47,8 @@ export default function Router() {
         { path: 'subject/:id', element: <SubjectList/> },
         { path: 'quiz', element: <Quiz/> },
         { path: 'startquiz', element: <StartQuiz/> },
+        { path: 'profile', element: <Profile/> },
+        { path: 'settings', element: <Settings/> },
 
 
       ]

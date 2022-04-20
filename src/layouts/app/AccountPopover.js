@@ -15,7 +15,7 @@ const MENU_OPTIONS = [
   {
     label: 'Home',
     icon: 'eva:home-fill',
-    linkTo: '/'
+    linkTo: '/app'
   },
   {
     label: 'Profile',
@@ -25,7 +25,7 @@ const MENU_OPTIONS = [
   {
     label: 'Settings',
     icon: 'eva:settings-2-fill',
-    linkTo: '#'
+    linkTo: '/app/settings'
   }
 ];
 
@@ -106,7 +106,7 @@ export default function AccountPopover() {
         ))}
 
         <Box sx={{ p: 2, pt: 1.5 }}>
-          <Button fullWidth color="inherit" variant="outlined">
+          <Button  fullWidth color="inherit" variant="outlined">
             Logout
           </Button>
         </Box>
