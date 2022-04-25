@@ -7,7 +7,8 @@ import {Link as RouterLink, useNavigate} from 'react-router-dom';
 
 
 // ----------------------------------------------------------------------
-
+//id = subjectname
+//board = ZIMSEC
 
 const subjects = ['Biology','Physics', 'Mathematics', 'PE', 'Shona', 'VPA', 'Computer_Science','English']
 
@@ -19,7 +20,7 @@ export default function HomeApp() {
 
 
     return (
-        <Page title="Dashboard | Home">
+        <Page title=" | Home">
             <Container maxWidth="xl">
 
 

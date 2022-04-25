@@ -69,6 +69,9 @@ export default function AppSubject(props) {
                         <Iconify icon={icons[subject]} width={24} height={24} />
                     </IconWrapperStyle>
                     <Typography variant="h3">{subject}</Typography>
+                    <Typography variant="subtitle2" sx={{ opacity: 0.72 }}>
+                        IGCSE
+                    </Typography>
 
             </RootStyle>
         </Link>

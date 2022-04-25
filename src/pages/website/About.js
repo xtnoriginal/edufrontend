@@ -61,58 +61,36 @@ class About extends React.Component{
     render() {
         return(
 
-            <Page title="Dashboard: Products | Minimal-UI">
+            <Page title="About | Eduproject">
 
                 <Container maxWidth="xl">
                     <Stack >
-                        <Typography>Eduproject</Typography>
-                        <Typography variant='h3'>Who are we?</Typography>
+                        <Typography variant="body2"  align='center'>Eduproject</Typography>
+                        <Typography variant='h3' align='center'>Who are we?</Typography>
                     </Stack>
 
                     <Grid
                         sx={{
                             display: 'grid',
-                            gap: 1,
+                            gap: 3,
                             gridTemplateColumns: 'repeat(2, 1fr)',
                         }}
                     >
-                        <Box>npm
+                        <Box>
                             <Typography variant='p'>
+                                Eduproject is  group that aims to lead a revolution in the education sector using technology.
 
 
                             </Typography>
 
                         </Box>
 
-                        <ImageList sx={{ width: 500, height: 450 }} variant="woven" cols={3} gap={8}>
-                            {itemData.map((item) => (
-                                <ImageListItem key={item.img}>
-                                    <img
-                                        src={`${item.img}?w=161&fit=crop&auto=format`}
-                                        srcSet={`${item.img}?w=161&fit=crop&auto=format&dpr=2 2x`}
-                                        alt={item.title}
-                                        loading="lazy"
-                                    />
-                                </ImageListItem>
-                            ))}
-                        </ImageList>
+                        <img alt="register" src="/static/illustrations/illustration_register.png" />
 
 
                     </Grid>
 
 
-                    <ImageList sx={{ width: 500, height: 450 }} variant="woven" cols={3} gap={8}>
-                        {itemData.map((item) => (
-                            <ImageListItem key={item.img}>
-                                <img
-                                    src={`${item.img}?w=161&fit=crop&auto=format`}
-                                    srcSet={`${item.img}?w=161&fit=crop&auto=format&dpr=2 2x`}
-                                    alt={item.title}
-                                    loading="lazy"
-                                />
-                            </ImageListItem>
-                        ))}
-                    </ImageList>
 
                 </Container>
             </Page>

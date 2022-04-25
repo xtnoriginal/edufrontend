@@ -3,6 +3,7 @@ import { Outlet } from 'react-router-dom';
 // material
 import { styled } from '@mui/material/styles';
 import Navbar from "../../components/Navbar";
+import Footer from "../../components/footer/Footer";
 
 
 
@@ -41,7 +42,6 @@ export default function WebsiteLayout() {
             <MainStyle>
                 <Outlet />
             </MainStyle>
-
         </RootStyle>
     );
 }

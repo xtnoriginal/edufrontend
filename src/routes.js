@@ -30,6 +30,7 @@ export default function Router() {
       path: '/',
       element: <WebsiteLayout />,
       children: [
+        { path: '', element: <Navigate to="/home" />  },
         { path: 'home', element: <Home/> },
         { path: 'blog', element: <Blog /> },
         { path: 'about', element: <About /> },

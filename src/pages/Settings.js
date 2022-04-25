@@ -7,7 +7,7 @@ import {SettingsPassword} from "../sections/app/settings/settings-password";
 
 export default function Settings() {
     return (
-        <Page title="Dashboard: Products | Minimal-UI">
+        <Page title="App: Settings | Eduproject">
             <Container>
                 <Typography variant="h4" sx={{ mb: 5 }}>
                     Settings

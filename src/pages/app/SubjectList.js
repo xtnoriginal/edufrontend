@@ -89,33 +89,6 @@ export default function SubjectList() {
         setOrderBy(property);
     };
 
-    const handleSelectAllClick = (event) => {
-        if (event.target.checked) {
-            const newSelecteds = USERLIST.map((n) => n.name);
-            setSelected(newSelecteds);
-            return;
-        }
-        setSelected([]);
-    };
-
-    const handleClick = (event, name) => {
-
-        const selectedIndex = selected.indexOf(name);
-        let newSelected = [];
-        if (selectedIndex === -1) {
-            newSelected = newSelected.concat(selected, name);
-        } else if (selectedIndex === 0) {
-            newSelected = newSelected.concat(selected.slice(1));
-        } else if (selectedIndex === selected.length - 1) {
-            newSelected = newSelected.concat(selected.slice(0, -1));
-        } else if (selectedIndex > 0) {
-            newSelected = newSelected.concat(
-                selected.slice(0, selectedIndex),
-                selected.slice(selectedIndex + 1)
-            );
-        }
-        setSelected(newSelected);
-    };
 
     const handleChangePage = (event, newPage) => {
         setPage(newPage);
@@ -141,13 +114,14 @@ export default function SubjectList() {
     const filteredUsers = applySortFilter(USERLIST, getComparator(order, orderBy), filterName);
 
     const isUserNotFound = filteredUsers.length === 0;
+    const subject = id;
 
     return (
         <Page title="User | Minimal-UI">
             <Container>
                 <Stack direction="row" alignItems="center" justifyContent="space-between" mb={5}>
                     <Typography variant="h4" gutterBottom>
-                        {id}
+                        {subject}
                     </Typography>
 
                 </Stack>
@@ -176,26 +150,26 @@ export default function SubjectList() {
                                             const { id, name, role, status, company, avatarUrl, isVerified } = row;
                                             const isItemSelected = selected.indexOf(name) !== -1;
 
+
                                             return (
                                                 <TableRow
                                                     hover
                                                     key={id}
                                                     tabIndex={-1}
                                                     onClick={handleClickByRow}
-                                                    role="checkbox"
 
                                                 >
 
                                                     <TableCell component="th" scope="row" padding="none">
-                                                        <Stack direction="row" alignItems="center" spacing={2}>
-                                                            <Typography variant="subtitle2" noWrap>
+                                                        <Stack align="left"  direction="row" alignItems="center" spacing={2}>
+                                                            <Typography  align="right" variant="subtitle2" noWrap>
                                                                  Paper 1
                                                             </Typography>
                                                         </Stack>
                                                     </TableCell>
                                                     <TableCell align="left">2021</TableCell>
-                                                    <TableCell align="left">{id}</TableCell>
-                                                    <TableCell align="left">{isVerified ? 'Yes' : 'No'}</TableCell>
+                                                    <TableCell align="left">{subject}</TableCell>
+                                                    <TableCell align="left">100%</TableCell>
                                                     <TableCell align="left">
                                                         <Label
                                                             variant="ghost"
@@ -205,9 +179,7 @@ export default function SubjectList() {
                                                         </Label>
                                                     </TableCell>
 
-                                                    <TableCell align="right">
-                                                        <SubjectMoreMenu/>
-                                                    </TableCell>
+
                                                 </TableRow>
                                             );
                                         })}

@@ -11,7 +11,7 @@ export default function Profile() {
 
 
     return (
-        <Page title="Dashboard: Products | Minimal-UI">
+        <Page title="App: Profile | Eduproject">
             <Container>
                 <Typography variant="h4" sx={{ mb: 5 }}>
                     Profile

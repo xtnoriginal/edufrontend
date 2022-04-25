@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useFormik, Form, FormikProvider } from 'formik';
 import { useNavigate } from 'react-router-dom';
 // material
-import { Stack, TextField, IconButton, InputAdornment } from '@mui/material';
+import {Stack, TextField, IconButton, InputAdornment, Grid} from '@mui/material';
 import { LoadingButton } from '@mui/lab';
 // component
 import Iconify from '../../../components/Iconify';
@@ -253,6 +253,18 @@ export default function RegisterForm() {
 
 
           
+
+
+
+          <Grid
+
+              sx={{
+                display: 'grid',
+                gap: 3,
+                gridTemplateColumns: 'repeat(2, 1fr)',
+              }}
+          >
+
             <CustomSelect>
               {countries.map((c) => (
                   <StyledOption key={c.code} value={c.code}>
@@ -280,9 +292,7 @@ export default function RegisterForm() {
 
 
 
-          <MultipleSelectChip/>
-
-          <UnstyledSelectCustomRenderValue/>
+          </Grid>
 
 
 

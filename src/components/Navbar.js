@@ -70,9 +70,6 @@ export default function Navbar({ onOpenSidebar }) {
                         Blog
                     </Link>
 
-                    <Link to="/contact"  underline="none"  component={RouterLink}>
-                        Contact
-                    </Link>
 
                     <Link to="/login" underline="none"  component={RouterLink}>
                         <Button  to="/login" variant="contained" > Sign In</Button>
