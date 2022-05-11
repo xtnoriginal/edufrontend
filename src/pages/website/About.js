@@ -2,6 +2,8 @@ import React  from "react";
 import {Box, Container, Grid, ImageList, ImageListItem, Stack, TextField, Typography} from "@mui/material";
 import Page from "../../components/Page";
 import {textAlign} from "@mui/system";
+import Qoute from "../../components/Qoute";
+
 
 
 const itemData = [
@@ -72,27 +74,26 @@ class About extends React.Component{
                     <Grid
                         sx={{
                             display: 'grid',
-                            gap: 3,
+                            gap: 10,
                             gridTemplateColumns: 'repeat(2, 1fr)',
+                            margin:5
                         }}
                     >
                         <Box>
                             <Typography variant='p'>
-                                Eduproject is  group that aims to lead a revolution in the education sector using technology.
-
-
+                                Eduproject is  group that aims to lead a revolution in the education sector using technology.Education
                             </Typography>
-
                         </Box>
-
                         <img alt="register" src="/static/illustrations/illustration_register.png" />
-
-
                     </Grid>
 
-
-
                 </Container>
+
+
+                <Container maxWidth="xl">
+                    <Qoute/>
+                </Container>
+
             </Page>
         );
     }

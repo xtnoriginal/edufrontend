@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import { forwardRef } from 'react';
 // material
 import { Box } from '@mui/material';
+import Footer from "./footer/Footer";
 
 // ----------------------------------------------------------------------
 

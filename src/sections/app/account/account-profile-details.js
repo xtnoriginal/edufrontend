@@ -71,7 +71,7 @@ export const AccountProfileDetails = (props) => {
                 name="firstName"
                 onChange={handleChange}
                 required
-                value={values.firstName}
+                value={props.user.firstName}
                 variant="outlined"
               />
             </Grid>
@@ -86,7 +86,7 @@ export const AccountProfileDetails = (props) => {
                 name="lastName"
                 onChange={handleChange}
                 required
-                value={values.lastName}
+                value={props.user.lastName}
                 variant="outlined"
               />
             </Grid>
@@ -101,7 +101,7 @@ export const AccountProfileDetails = (props) => {
                 name="email"
                 onChange={handleChange}
                 required
-                value={values.email}
+                value={props.user.email}
                 variant="outlined"
               />
             </Grid>
@@ -116,7 +116,7 @@ export const AccountProfileDetails = (props) => {
                 name="phone"
                 onChange={handleChange}
                 type="number"
-                value={values.phone}
+                value={props.user.phone}
                 variant="outlined"
               />
             </Grid>
@@ -131,7 +131,7 @@ export const AccountProfileDetails = (props) => {
                 name="country"
                 onChange={handleChange}
                 required
-                value={values.country}
+                value={props.user.country}
                 variant="outlined"
               />
             </Grid>
@@ -148,7 +148,7 @@ export const AccountProfileDetails = (props) => {
                 required
                 select
                 SelectProps={{ native: true }}
-                value={values.state}
+                value={props.user.city}
                 variant="outlined"
               >
                 {states.map((option) => (

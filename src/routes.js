@@ -7,7 +7,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import DashboardApp from './pages/DashboardApp';
 import Products from './pages/Products';
-import Blog from './pages/Blog';
+import Blog from './pages/website/Blog';
 import User from './pages/User';
 import NotFound from './pages/Page404';
 import AppLayout from "./layouts/app";
@@ -20,6 +20,7 @@ import Home from "./pages/website/Home";
 import About from "./pages/website/About";
 import Settings from "./pages/Settings";
 import Profile from "./pages/Profile";
+import BlogPost from "./pages/website/BlogPost";
 
 
 // ----------------------------------------------------------------------
@@ -34,8 +35,8 @@ export default function Router() {
         { path: 'home', element: <Home/> },
         { path: 'blog', element: <Blog /> },
         { path: 'about', element: <About /> },
-
-
+        { path: 'blog/post/:id', element: <BlogPost/> },
+        {}
       ]}
       ,
     {

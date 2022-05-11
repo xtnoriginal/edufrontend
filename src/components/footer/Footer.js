@@ -11,10 +11,8 @@ const RootStyle = styled('div')({
 
 export default function Footer(){
     return(
-        <Container>
+        <Container sx={{align: 'center'}}>
 
-
-            <Logo sx = {{align: 'center'}}/>
             <Grid
                 sx={{
                     display: 'grid',
@@ -22,9 +20,11 @@ export default function Footer(){
                     gridTemplateColumns: 'repeat(2, 1fr)',
                 }}
             >
-
+                <Logo sx = {{align: 'center'}}/>
+                <Typography variant="p">Copyright @ Eduproject</Typography>
+                <Typography variant="p">Copyright @ Eduproject</Typography>
             </Grid>
-            <Typography>Copyright @ Eduproject</Typography>
+            <Typography variant="p">Copyright @ Eduproject</Typography>
         </Container>
     );
 }

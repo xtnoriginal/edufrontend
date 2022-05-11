@@ -15,6 +15,7 @@ import { styled } from '@mui/system';
 import { PopperUnstyled } from '@mui/base'
 import MultipleSelectChip from "../../../components/MultipleSelectionChip";
 import UnstyledSelectCustomRenderValue from "../../../components/UnstyledSelectCustomRenderValue";
+import axios from "axios";
 // ----------------------------------------------------------------------
 
 
@@ -193,8 +194,22 @@ export default function RegisterForm() {
       password: ''
     },
     validationSchema: RegisterSchema,
-    onSubmit: () => {
-      navigate('/dashboard', { replace: true });
+    onSubmit: (values) => {
+
+      axios.post('http://localhost:8080/auth/signup', {
+        firstName: values.firstName,
+        lastName: values.lastName,
+        email: values.email,
+        password: values.password
+      })
+          .then(function (response) {
+            navigate('/', { replace: true });
+            console.log(response.statusText);
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+
     }
   });
 
@@ -250,49 +265,6 @@ export default function RegisterForm() {
               error={Boolean(touched.password && errors.password)}
               helperText={touched.password && errors.password}
           />
-
-
-          
-
-
-
-          <Grid
-
-              sx={{
-                display: 'grid',
-                gap: 3,
-                gridTemplateColumns: 'repeat(2, 1fr)',
-              }}
-          >
-
-            <CustomSelect>
-              {countries.map((c) => (
-                  <StyledOption key={c.code} value={c.code}>
-                    <img
-                        loading="lazy"
-                        width="20"
-                        src={`https://flagcdn.com/w20/${c.code.toLowerCase()}.png`}
-                        srcSet={`https://flagcdn.com/w40/${c.code.toLowerCase()}.png 2x`}
-                        alt={`Flag of ${c.label}`}
-                    />
-                    {c.label} ({c.code}) +{c.phone}
-                  </StyledOption>
-              ))}
-            </CustomSelect>
-
-            <TextField
-                fullWidth
-                autoComplete="username"
-                type="email"
-                label="Contact"
-                {...getFieldProps('contact')}
-                error={Boolean(touched.email && errors.email)}
-                helperText={touched.email && errors.email}
-            />
-
-
-
-          </Grid>
 
 
 

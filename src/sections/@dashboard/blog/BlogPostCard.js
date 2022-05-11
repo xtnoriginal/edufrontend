@@ -62,6 +62,8 @@ export default function BlogPostCard({ post, index }) {
   const latestPostLarge = index === 0;
   const latestPost = index === 1 || index === 2;
 
+  const link = 'post/'+{title}
+
   const POST_INFO = [
     { number: comment, icon: 'eva:message-circle-fill' },
     { number: view, icon: 'eva:eye-fill' },
@@ -140,7 +142,7 @@ export default function BlogPostCard({ post, index }) {
           </Typography>
 
           <TitleStyle
-            to="#"
+            to={link}
             color="inherit"
             variant="subtitle2"
             underline="hover"

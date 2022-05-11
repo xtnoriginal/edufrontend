@@ -41,13 +41,13 @@ export const AccountProfile = (props) => (
           gutterBottom
           variant="h5"
         >
-          {user.name}
+          {props.name}
         </Typography>
         <Typography
           color="textSecondary"
           variant="body2"
         >
-          {`${user.city} ${user.country}`}
+          {`${props.city} ${props.country}`}
         </Typography>
         <Typography
           color="textSecondary"
@@ -63,6 +63,7 @@ export const AccountProfile = (props) => (
         color="primary"
         fullWidth
         variant="text"
+
       >
         Upload picture
       </Button>

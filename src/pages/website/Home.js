@@ -31,17 +31,20 @@ class Home extends React.Component{
                     <Grid
                         sx={{
                             display: 'grid',
-                            gap: 3,
+                            gap: 10,
                             gridTemplateColumns: 'repeat(2, 1fr)',
+                            marginTop: 20
                         }}
-
                     >
-
+                        <div>
+                            <Typography variant="h2">
+                                Helping Students <br/> Pass their <br/> final exams
+                            </Typography>
+                            <Button  to="/register" variant="outlined" sx={{marginTop:3}} component={RouterLink}> Register</Button>
+                        </div>
 
                         <img alt="register" src="/static/illustrations/illustration_avatar.png" />
-                        <Typography>
-                            Helping Students Pass their final exams
-                        </Typography>
+
 
                     </Grid>
                 </Container>
@@ -50,24 +53,23 @@ class Home extends React.Component{
                 <Container maxWidth="xl">
 
                     <Typography variant="h4" sx={{ mb: 5 }}>
-                        Products
+                        Available
                     </Typography>
+
 
                     <Stack
                         direction="row"
                         flexWrap="wrap-reverse"
                         alignItems="center"
-                        justifyContent="flex-end"
                         sx={{ mb: 5 }}
                     >
 
+                        <h4>IGSCE, ALevels, Matric, Grade 7</h4>
+
                     </Stack>
 
-                    <ProductList products={PRODUCTS} />
-                    <ProductCartWidget />
                 </Container>
 
-                <Footer/>
             </Page>
         );
     }

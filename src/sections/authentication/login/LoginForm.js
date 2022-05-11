@@ -15,6 +15,7 @@ import {
 import { LoadingButton } from '@mui/lab';
 // component
 import Iconify from '../../../components/Iconify';
+import axios from "axios";
 
 // ----------------------------------------------------------------------
 
@@ -35,7 +36,20 @@ export default function LoginForm() {
     },
     validationSchema: LoginSchema,
     onSubmit: () => {
-      navigate('/app', { replace: true });
+      axios.post('http://localhost:8080/auth/login', {
+        email: values.email,
+        password: values.password
+      })
+          .then(function (response) {
+            //navigate('/', { replace: true });
+            console.log(response);
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+
+
+     //navigate('/app', { replace: true });
     }
   });
 
