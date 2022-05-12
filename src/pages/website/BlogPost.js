@@ -6,6 +6,7 @@ import {BlogPostCard, BlogPostsSearch, BlogPostsSort} from "../../sections/@dash
 import POSTS from '../../_mocks_/blog';
 import Page from "../../components/Page";
 import axios from "axios";
+import Comments from "../../sections/@dashboard/blog/Comments";
 
 
 // components
@@ -39,6 +40,8 @@ export default class BlogPost extends Component{
                     <p>
                         {this.state.blogpost.article}
                     </p>
+
+                    <Comments/>
                 </Container>
             </Page>
         );
