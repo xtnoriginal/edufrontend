@@ -2,6 +2,7 @@ import * as Yup from 'yup';
 import { useState } from 'react';
 import { Link as RouterLink, useNavigate } from 'react-router-dom';
 import { useFormik, Form, FormikProvider } from 'formik';
+import {setUserSession} from "../../../services/common";
 // material
 import {
   Link,
@@ -41,10 +42,15 @@ export default function LoginForm() {
         password: values.password
       })
           .then(function (response) {
-            //navigate('/', { replace: true });
+
+
+            setUserSession(response.data.token, response.data.user,response.data.email)
+            navigate('/app', { replace: true });
             console.log(response);
+
           })
           .catch(function (error) {
+            formik.isSubmitting = false;
             console.log(error);
           });
 

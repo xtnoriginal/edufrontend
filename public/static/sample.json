@@ -1,0 +1,453 @@
+[{
+  "question": "A student wishes to find the volume of a small, irregularly-shaped stone.A ruler and a measuring cylinder containing some water are available.\nWhich apparatus is needed?",
+  "picture": null,
+  "answers" : [
+    {"A":"neither the ruler nor the measuring cylinder"},
+    {"B": "the measuring cylinder only"},
+    {"C": "the ruler and the measuring cylinder "},
+    {"D":  "the ruler only"}
+
+
+  ]
+
+},
+  {
+    "question": "A ball is dropped from a table-top. Air resistance may be ignored. Which row describes the velocity and the acceleration of the ball at point X? ",
+    "picture": null,
+    "answers" : [
+      {"A":"neither the ruler nor the measuring cylinder"},
+      {"B": "the measuring cylinder only"},
+      {"C": "the ruler and the measuring cylinder "},
+      {"D":  "the ruler only"}
+    ]
+
+  },
+  {
+    "question": "The diagram shows the speed-time graph for a car. Which area represents the distance travelled while the car is accelerating? ",
+    "picture": null,
+    "answers" : [
+      {"A":"X"},
+      {"B": "X + Y"},
+      {"C": "Y"},
+      {"D":  "Y – X "}
+    ]
+
+  },
+  {
+    "question": "Which quantities are measured in the same unit? ",
+    "picture": null,
+    "answers" : [
+      {"A":"energy, power and work"},
+      {"B": "energy and power, but not work "},
+      {"C": "energy and work, but not power"},
+      {"D":  "power and work, but not energy "}
+    ]
+
+  },
+  {
+  "question": "Five identical bags of rice are balanced on a uniform beam by an object of mass 10kg. \n  Two more identical bags of rice are added to the other five. The average position of the bags on\nthe beam does not change. What mass now balances the bags? ",
+  "picture": null,
+  "answers" : [
+    {"A":"3.5kg "},
+    {"B": "7.0kg"},
+    {"C": "12kg"},
+    {"D":  "14kg"}
+  ]
+},
+  {
+    "question": "The diagram shows a cuboid block made from a metal of density 2.5g/ cm3\n. What is the mass of the block? ",
+    "picture": null,
+    "answers" : [
+      {"A":"8.0g"},
+      {"B": "16g"},
+      {"C": "50g"},
+      {"D":  "100g"}
+    ]
+  },
+  {
+    "question": "The diagram shows an unbalanced rod. Two loads X and Y can be moved along the rod. The rod turns in a clockwise direction as shown.\nWhich action could make the rod balance?",
+    "picture": null,
+    "answers" : [
+      {"A":"moving X to the left "},
+      {"B": "moving X to the right "},
+      {"C": "moving Y to the right"},
+      {"D":  "moving the pivot to the left"}
+    ]
+  },
+  {
+    "question": " A box is being lifted by a fork-lift truck. The weight of the box is 3000N.\nThe force exerted by the fork-lift truck on the box is 3500N vertically upwards.\nWhat is the resultant vertical force on the box? ",
+    "picture": null,
+    "answers" : [
+      {"A":"500N downwards"},
+      {"B": "500N upwards"},
+      {"C": "6500N downwards"},
+      {"D":  "6500N upwards"}
+    ]
+  },
+  {
+    "question": "The diagram shows a ball hanging on a string. The ball swings from point W to point Z and back\nto point W. Which statement about the ball is correct? ",
+    "picture": null,
+    "answers" : [
+      {"A":" The kinetic energy of the ball is greatest at point W"},
+      {"B": "The kinetic energy of the ball is greatest at point X. "},
+      {"C": "The kinetic energy of the ball is greatest at point Y. "},
+      {"D":  "The kinetic energy of the ball is the same at all points of the swing."}
+    ]
+  },
+
+  {
+    "question": "A person in a factory has to lift a box on to a shelf. Which action involves the person doing the least amount of work? ",
+    "picture": null,
+    "answers" : [
+      {"A":"lifting the box quickly to the high shelf"},
+      {"B": "lifting the box slowly to the high shelf "},
+      {"C": "lifting the box to the low shelf first then lifting it to the high shelf "},
+      {"D":  "lifting the box to the low shelf instead of to the high shelf"}
+    ]
+  },
+
+  {
+    "question": "Which is a non-renewable energy resource? ",
+    "picture": null,
+    "answers" : [
+      {"A":"coal"},
+      {"B": "solar"},
+      {"C": "tides"},
+      {"D":  "wind"}
+    ]
+  }, {
+  "question": "The diagram shows a simple mercury barometer.\nWhich labelled length is measured when finding atmospheric pressure? ",
+  "picture": null,
+  "answers" : [
+    {"A":"coal"},
+    {"B": "solar"},
+    {"C": "tides"},
+    {"D":  "wind"}
+  ]
+}
+, {
+  "question": "Identical toy bricks are placed one on top of another to make a tower on a table.Which graph shows the relationship between the pressure P that the tower exerts on the table\nand the weight W of the tower? ",
+  "picture": null,
+  "answers" : [
+    {"A":"coal"},
+    {"B": "solar"},
+    {"C": "tides"},
+    {"D":  "wind"}
+  ]
+}
+, {
+  "question": "The table lists the melting points and the boiling points of four different substances.\nWhich substance is a liquid at 0°C? ",
+  "picture": null,
+  "answers" : [
+    {"A":"coal"},
+    {"B": "solar"},
+    {"C": "tides"},
+    {"D":  "wind"}
+  ]
+}
+
+, {
+  "question": "Air in a sealed syringe is slowly compressed by moving the piston. The temperature of the air\nstays the same.Which statement about the air is correct? ",
+  "picture": null,
+  "answers" : [
+    {"A":"The pressure of the air decreases because its molecules now travel more slowly. "},
+    {"B": "The pressure of the air decreases because the area of the syringe walls is now smaller. "},
+    {"C": "The pressure of the air increases because its molecules now hit the syringe walls more frequently. "},
+    {"D": "The pressure of the air increases because its molecules now travel more quickly. "}
+  ]
+}
+, {
+  "question": "Which quantity gives the thermal capacity of a solid object? ",
+  "picture": null,
+  "answers" : [
+    {"A":"the energy lost by radiation from the object in 1.0s "},
+    {"B": "the energy needed to melt the object "},
+    {"C": "the energy needed to raise the temperature of the object by 1.0°C "},
+    {"D": "the total amount of thermal energy in the object "}
+  ]
+}
+, {
+  "question": "To mark a temperature scale on a thermometer, standard temperatures known as fixed points are\nneeded.\nWhich of these is a fixed point on the Celsius scale? ",
+  "picture": null,
+  "answers" : [
+    {"A":" room temperature"},
+    {"B": "the temperature inside a freezer"},
+    {"C": "the temperature of pure melting ice "},
+    {"D": "the temperature of pure warm water"}
+  ]
+}
+, {
+  "question": "The diagram shows electricity cables being put up on a warm day. The cables are left loose\nbetween the poles, as shown in the diagram. Why are the cables left loose? ",
+  "picture": null,
+  "answers" : [
+    {"A": "They will contract on cold days. "},
+    {"B": "They will contract on very warm days. "},
+    {"C": "They will expand on cold days."},
+    {"D": "They will expand on very warm days."}
+  ]
+},
+  {
+    "question": "A cotton sheet is ironed with a hot electric iron.\nHow is energy transferred through the metal base of the iron to the sheet? ",
+    "picture": null,
+    "answers" : [
+      {"A": "by conduction only"},
+      {"B": "by convection only"},
+      {"C": "by radiation only"},
+      {"D": "by convection and radiation only "}
+    ]
+  },
+
+  {
+    "question": "Two plastic cups are placed one inside the other. A small spacer keeps the two cups separated.\n Hot water is poured into the inner cup and a lid is put on top, as shown. Which statement is correct?",
+    "picture": null,
+    "answers" : [
+      {"A": "The bench is heated by convection from the bottom of the outer cup. "},
+      {"B": "The lid reduces the energy lost by convection. "},
+      {"C": "There is no thermal conduction through the sides of either cup. "},
+      {"D": "Thermal radiation is prevented by the small air gap. "}
+    ]
+  }
+,
+
+  {
+    "question": " A water wave in a shallow tank passes through a gap in a barrier. What happens to the speed and what happens to the wavelength of the wave as it passes\nthrough the gap?",
+    "picture": null,
+    "answers" : [
+      {"A": "The bench is heated by convection from the bottom of the outer cup. "},
+      {"B": "The lid reduces the energy lost by convection. "},
+      {"C": "There is no thermal conduction through the sides of either cup. "},
+      {"D": "Thermal radiation is prevented by the small air gap. "}
+    ]
+  },
+
+  {
+    "question": "Which is a unit of wavelength?",
+    "picture": null,
+    "answers" : [
+      {"A": "hertz"},
+      {"B": "metre"},
+      {"C": "metre per second"},
+      {"D": "second"}
+    ]
+  },
+
+  {
+    "question": "Which diagram correctly shows a ray of light reflected by a plane mirror? ",
+    "picture": null,
+    "answers" : [
+      {"A": "The bench is heated by convection from the bottom of the outer cup. "},
+      {"B": "The lid reduces the energy lost by convection. "},
+      {"C": "There is no thermal conduction through the sides of either cup. "},
+      {"D": "Thermal radiation is prevented by the small air gap. "}
+    ]
+  },
+
+
+
+
+
+
+  {
+    "question": "A ray of white light is incident on a glass prism. Which ray diagram shows the ray as it passes through the prism and emerges from the opposite\nside?",
+    "picture": null,
+    "answers" : [
+      {"A": "P is louder and higher in pitch than Q."},
+      {"B": "P is louder and lower in pitch than Q. "},
+      {"C": "P is quieter and higher in pitch than Q. "},
+      {"D": "P is quieter and lower in pitch than Q. "}
+    ]
+  }
+,
+
+  {
+    "question": "A sound wave travels from a point X to another point Y. Which diagram represents the movement of the air molecules, due to the sound wave, in the\nregion between X and Y? ",
+    "picture": null,
+    "answers" : [
+      {"A": "P is louder and higher in pitch than Q."},
+      {"B": "P is louder and lower in pitch than Q. "},
+      {"C": "P is quieter and higher in pitch than Q. "},
+      {"D": "P is quieter and lower in pitch than Q. "}
+    ]
+  }
+,
+
+
+  {
+    "question": "Sound wave P has a greater amplitude and a larger wavelength in air than sound wave Q.\nHow do the loudness and pitch of P compare with the loudness and pitch of Q?",
+    "picture": null,
+    "answers" : [
+      {"A": "P is louder and higher in pitch than Q."},
+      {"B": "P is louder and lower in pitch than Q. "},
+      {"C": "P is quieter and higher in pitch than Q. "},
+      {"D": "P is quieter and lower in pitch than Q. "}
+    ]
+  }
+,
+  {
+    "question": "In which pair are both materials magnetic?  ",
+    "picture": null,
+    "answers" : [
+      {"A": "aluminium and copper"},
+      {"B": "copper and iron "},
+      {"C": "iron and steel"},
+      {"D": "steel and aluminium "}
+    ]
+  }
+,
+  {
+    "question": " The diagram shows the magnetic field around two bar magnets. Which diagram shows the poles of the magnets?  ",
+    "picture": null,
+    "answers" : [
+      {"A": "a battery"},
+      {"B": "a filament lamp"},
+      {"C": "a resistor "},
+      {"D": "a spring balance "}
+    ]
+  }
+,
+  {
+    "question": "Which produces an electromotive force (e.m.f.)? ",
+    "picture": null,
+    "answers" : [
+      {"A": "a battery"},
+      {"B": "a filament lamp"},
+      {"C": "a resistor "},
+      {"D": "a spring balance "}
+    ]
+  }
+,
+  {
+    "question": "The table describes four different resistance wires. They are all made from the same metal.\nWhich wire has the smallest resistance? ",
+    "picture": null,
+    "answers" : [
+      {"A": "less than 40Ω"},
+      {"B": "50Ω"},
+      {"C": "between 60Ω and 100Ω"},
+      {"D": "100Ω"}
+    ]
+  }
+,
+  {
+    "question": "Four lamps are each labelled 240V.\nIn which circuit do all four lamps have normal brightness? ",
+    "picture": null,
+    "answers" : [
+      {"A": "less than 40Ω"},
+      {"B": "50Ω"},
+      {"C": "between 60Ω and 100Ω"},
+      {"D": "100Ω"}
+    ]
+  }
+,
+  {
+    "question": "The diagram shows a 40Ω resistor and a 60Ω resistor connected in parallel. What is the total resistance between points P and Q?",
+    "picture": null,
+    "answers" : [
+      {"A": "less than 40Ω"},
+      {"B": "50Ω"},
+      {"C": "between 60Ω and 100Ω"},
+      {"D": "100Ω"}
+    ]
+  }
+,
+  {
+    "question": "The diagram shows a potential divider connected to two voltmeters P and Q. The resistance of the variable resistor is decreased.\nWhich row shows what happens to the reading on each voltmeter? ",
+    "picture": null,
+    "answers" : [
+      {"A": "a fire "},
+      {"B": "a fuse blows "},
+      {"C": "an electric shock"},
+      {"D": "no current flows"}
+    ]
+  }
+,
+  {
+    "question": "After some building work in a house, a bare (uninsulated) live wire is left protruding from a wall.\nWhat is the greatest hazard? ",
+    "picture": null,
+    "answers" : [
+      {"A": "a fire "},
+      {"B": "a fuse blows "},
+      {"C": "an electric shock"},
+      {"D": "no current flows"}
+    ]
+  }
+,
+
+  {
+    "question": "A coil carries a current in a magnetic field. The coil experiences a turning effect.\nWhich device uses this effect? ",
+    "picture": null,
+    "answers" : [
+      {"A": "a d.c. motor "},
+      {"B": "an electromagnet"},
+      {"C": "a relay "},
+      {"D": "a transformer"}
+    ]
+  }
+,
+
+
+  {
+    "question": "A magnet is suspended from a spring so that it can move freely inside a stationary coil. The coil is\nconnected to a sensitive centre-zero galvanometer. The magnet repeatedly moves slowly up and down.\nWhat does the galvanometer show?  ",
+    "picture": null,
+    "answers" : [
+      {"A": "a constantly changing reading "},
+      {"B": "a steady reading to the left "},
+      {"C": "a steady reading to the right "},
+      {"D": "a steady reading of zero "}
+    ]
+  }
+,
+  {
+    "question": "\n  {\n    \"question\": \"A nucleus of element X is represented as X 56\\n26 .\\nWhich is an isotope of element X? \",\n    \"picture\": null,\n    \"answers\" : [\n      {\"A\": \"The bench is heated by convection from the bottom of the outer cup. \"},\n      {\"B\": \"The lid reduces the energy lost by convection. \"},\n      {\"C\": \"There is no thermal conduction through the sides of either cup. \"},\n      {\"D\": \"Thermal radiation is prevented by the small air gap. \"}\n    ]\n  }\n,",
+    "picture": null,
+    "answers" : [
+      {"A": "The bench is heated by convection from the bottom of the outer cup. "},
+      {"B": "The lid reduces the energy lost by convection. "},
+      {"C": "There is no thermal conduction through the sides of either cup. "},
+      {"D": "Thermal radiation is prevented by the small air gap. "}
+    ]
+  }
+,
+  {
+    "question": "A nucleus of element X is represented as X 56\n26 .\nWhich is an isotope of element X? ",
+    "picture": null,
+    "answers" : [
+      {"A": "The bench is heated by convection from the bottom of the outer cup. "},
+      {"B": "The lid reduces the energy lost by convection. "},
+      {"C": "There is no thermal conduction through the sides of either cup. "},
+      {"D": "Thermal radiation is prevented by the small air gap. "}
+    ]
+  }
+,
+  {
+    "question": "The charge on a proton is e.\nWhat is the charge on an electron and what is the charge on a neutron? ",
+    "picture": null,
+    "answers" : [
+      {"A": "The bench is heated by convection from the bottom of the outer cup. "},
+      {"B": "The lid reduces the energy lost by convection. "},
+      {"C": "There is no thermal conduction through the sides of either cup. "},
+      {"D": "Thermal radiation is prevented by the small air gap. "}
+    ]
+  }
+,
+  {
+    "question": "A scientist carries out an experiment using a sealed source which emits β-particles. The range of\nthe β-particles in the air is about 30cm.\nWhich precaution is the most effective to protect the scientist from the radiation?",
+    "picture": null,
+    "answers" : [
+      {"A": "The bench is heated by convection from the bottom of the outer cup. "},
+      {"B": "The lid reduces the energy lost by convection. "},
+      {"C": "There is no thermal conduction through the sides of either cup. "},
+      {"D": "Thermal radiation is prevented by the small air gap. "}
+    ]
+  }
+,
+  {
+    "question": "Which row describes the nature of α-particles and of γ-rays?",
+    "picture": null,
+    "answers" : [
+      {"A": "The bench is heated by convection from the bottom of the outer cup. "},
+      {"B": "The lid reduces the energy lost by convection. "},
+      {"C": "There is no thermal conduction through the sides of either cup. "},
+      {"D": "Thermal radiation is prevented by the small air gap. "}
+    ]
+  }
+]

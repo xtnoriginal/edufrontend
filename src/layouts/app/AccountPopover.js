@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react';
-import { Link as RouterLink } from 'react-router-dom';
+import {Link as RouterLink, useNavigate} from 'react-router-dom';
 // material
 import { alpha } from '@mui/material/styles';
 import { Button, Box, Divider, MenuItem, Typography, Avatar, IconButton } from '@mui/material';
@@ -9,6 +9,7 @@ import MenuPopover from '../../components/MenuPopover';
 //
 import account from '../../_mocks_/account';
 import axios from "axios";
+import {getEmail, getToken, getUser} from "../../services/common";
 
 // ----------------------------------------------------------------------
 
@@ -43,7 +44,25 @@ export default function AccountPopover() {
     setOpen(false);
   };
 
-  
+
+  const name = getUser();
+  const token = getToken();
+  const email = getEmail();
+
+  const navigate = useNavigate();
+
+
+  const logout = () => {
+
+      navigate('/',{replace:true});
+      console.log('logout');
+
+  };
+
+
+
+
+
 
 
   return (
@@ -79,10 +98,10 @@ export default function AccountPopover() {
       >
         <Box sx={{ my: 1.5, px: 2.5 }}>
           <Typography variant="subtitle1" noWrap>
-            {account.displayName}
+            {name}
           </Typography>
           <Typography variant="body2" sx={{ color: 'text.secondary' }} noWrap>
-            {account.email}
+            {email}
           </Typography>
         </Box>
 
@@ -110,7 +129,7 @@ export default function AccountPopover() {
         ))}
 
         <Box sx={{ p: 2, pt: 1.5 }}>
-          <Button  fullWidth color="inherit" variant="outlined">
+          <Button  onClick={logout} fullWidth color="inherit" variant="outlined">
             Logout
           </Button>
         </Box>
