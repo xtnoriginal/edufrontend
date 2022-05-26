@@ -20,6 +20,8 @@ const instructions = ["1) The examination will consist of 40 questions."
 
 
 export default function StartQuiz() {
+    //const subject = this.props.subject;
+
     return (
         <Page title="Dashboard: Blog | Minimal-UI">
             <Container>
@@ -46,7 +48,7 @@ export default function StartQuiz() {
                             <Button
                                 variant="outlined"
                                 component={RouterLink}
-                                to="#"
+                                to="/app/{+}"
                             >
                                 Back
                             </Button>

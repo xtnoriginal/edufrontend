@@ -88,7 +88,7 @@ export default class Quiz extends React.Component{
         });
         this.setState({ Quiz_Set: nexState })
     }
-
+*/
     onsubmit = () =>{
         //   console.log(this.state.Quiz_Set)
         let list = this.state.subjects ;
@@ -118,7 +118,7 @@ export default class Quiz extends React.Component{
         }
     }
 
-*/
+
     Snackbarrender =() =>{
         return(
             this.state.open? <Snackbar open={this.state.open} autoHideDuration={5000}  onClose={this.handleClose} style={{marginTop:'0px',width:'100%'}}>
@@ -153,19 +153,24 @@ export default class Quiz extends React.Component{
                                         return (
                                             <div>
 
-                                                <Logo/>
+                                                <Container justify = "center" alignItems="center">
+                                                    <img src="/static/demoimage.png"/>
+                                                </Container>
+
                                                 <Typography variant="h6">{item.question}</Typography>
-                                                <FormControl>
-                                                    <FormLabel id="demo-radio-buttons-group-label">Answers</FormLabel>
+                                                <FormControl sx={{marginTop:5, marginBottom:5}}>
+                                                    <FormLabel id="answerslabel">Answers</FormLabel>
                                                     <RadioGroup
                                                         aria-labelledby="demo-radio-buttons-group-label"
                                                         defaultValue="female"
                                                         name="radio-buttons-group"
                                                     >
                                                     {item.answers.map((question,id)=>{
+
+                                                        const position = Object.keys(question)[0];
                                                         return(
 
-                                                            <FormControlLabel value={"female"+id} control={<Radio />} label={"Female"+id} />
+                                                            <FormControlLabel value={position} control={<Radio />} label={position+") "+question[position]} />
 
                                                         )
                                                     })}
