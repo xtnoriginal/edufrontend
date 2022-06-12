@@ -1,5 +1,5 @@
 import {styled} from "@mui/material/styles";
-import {Container, Grid, Typography} from "@mui/material";
+import {Container, Grid, Stack, Typography} from "@mui/material";
 import Logo from "../Logo";
 
 const RootStyle = styled('div')({
@@ -17,14 +17,23 @@ export default function Footer(){
                 sx={{
                     display: 'grid',
                     gap: 3,
-                    gridTemplateColumns: 'repeat(2, 1fr)',
+                    gridTemplateColumns: 'repeat(3, 1fr)',
                 }}
             >
-                <Logo sx = {{align: 'center'}}/>
-                <Typography variant="p">Copyright @ Eduproject</Typography>
-                <Typography variant="p">Copyright @ Eduproject</Typography>
+                <Stack>
+                    <Typography variant="p">Copyright @ Eduproject</Typography>
+                </Stack>
+                <Stack>
+                    <Logo sx = {{align: 'center'}}/>
+                </Stack>
+                <Stack>
+                    <Typography varian  t="p">Copyright @ Eduproject</Typography>
+                </Stack>
+
+
+
             </Grid>
-            <Typography variant="p">Copyright @ Eduproject</Typography>
+            <Typography align ="center" variant="p">Copyright @ Eduproject</Typography>
         </Container>
     );
 }

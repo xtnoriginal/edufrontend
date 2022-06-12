@@ -5,7 +5,7 @@ import {
     Card, CardContent,
     Container,
     FormControlLabel,
-    FormLabel,
+    FormLabel, LinearProgress,
     MobileStepper, Radio,
     RadioGroup,
     Snackbar,
@@ -20,6 +20,7 @@ import Replay from '@material-ui/icons/Replay';
 import MuiAlert from "@material-ui/lab/Alert"
 import axios from "axios";
 import Logo from "../../components/Logo";
+import Countdown from "../../components/countdown/Countdown";
 
 
 //
@@ -134,7 +135,7 @@ export default class Quiz extends React.Component{
 
     render(){
         return (
-            <Page title="Dashboard: Products | Minimal-UI">
+            <Page title="Quiz | Eduproject">
                 <Container>
                     <Typography variant="h4" sx={{ mb: 5 }}>
                         Quiz
@@ -143,15 +144,19 @@ export default class Quiz extends React.Component{
                         {this.state.Quiz_Set.question}
                     </p>
 
+                    <Countdown/>
+
 
 
                     <Card>
                         <CardContent>
                             <div>
                                 {this.state.Quiz_Set.map((item,index)=>{
+
                                     if(Math.abs(this.state.activeStep-index)<=0) {
                                         return (
                                             <div>
+                                                <LinearProgress variant="determinate" value={60} />
 
                                                 <Container justify = "center" alignItems="center">
                                                     <img src="/static/demoimage.png"/>

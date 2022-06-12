@@ -14,6 +14,7 @@ const Page = forwardRef(({ children, title = '', ...other }, ref) => (
     </Helmet>
     {children}
   </Box>
+
 ));
 
 Page.propTypes = {

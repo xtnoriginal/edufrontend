@@ -1,0 +1,461 @@
+[
+  {
+    "question": "The diagram shows how to obtain pure water from seawater.\nWhere do water molecules lose energy?",
+    "picture": null,
+    "answers" : [
+      {"A":"neither the ruler nor the measuring cylinder"},
+      {"B": "the measuring cylinder only"},
+      {"C": "the ruler and the measuring cylinder "},
+      {"D":  "the ruler only"}
+
+
+    ]
+
+  },
+  {
+    "question": "A solid metal is heated until it turns to vapour.\nThe graph shows the temperature of the metal during this process.\nWhich part of the graph shows the melting of the metal?",
+    "picture": null,
+    "answers" : [
+      {"A":"neither the ruler nor the measuring cylinder"},
+      {"B": "the measuring cylinder only"},
+      {"C": "the ruler and the measuring cylinder "},
+      {"D":  "the ruler only"}
+
+
+    ]
+
+  }
+,
+  {
+    "question": "Some chemical compounds are purified by recrystallisation.\nWhat can be used to test the purity of the crystals?",
+    "picture": null,
+    "answers" : [
+      {"A":" melting point"},
+      {"B": "colour of crystals"},
+      {"C": " size of crystals"},
+      {"D":  "solubility"}
+
+    ]
+
+  },
+  {
+    "question": "What could be the melting point and boiling point of water containing a dissolved impurity?",
+    "picture": null,
+    "answers" : [
+      {"A":" melting point"},
+      {"B": "colour of crystals"},
+      {"C": " size of crystals"},
+      {"D":  "solubility"}
+
+    ]
+
+  },
+  {
+    "question": "What is the electronic structure of an atom with a proton number 5 and a nucleon number 11?",
+    "picture": null,
+    "answers" : [
+      {"A":"1, 8, 2 "},
+      {"B": "2, 8, 1"},
+      {"C": "2, 3 "},
+      {"D":  "3, 2"}
+
+    ]
+
+  },
+  {
+    "question": "What changes when an ion is made from an atom?",
+    "picture": null,
+    "answers" : [
+      {"A":"the number of electrons only"},
+      {"B": "the number of neutrons only"},
+      {"C": "the number of protons only"},
+      {"D":  "the number both of protons and of neutrons"}
+
+    ]
+
+  },
+  {
+    "question": "Strontium, Sr, is a metal that forms an ionic chloride SrCl2\n.\nSulphur, S, is a non-metal that forms a covalent chloride SCl2\n.\nWhich compound is likely to have the higher melting point (m.p.) and which is more soluble in\nwater?\nmelting point / oC boiling point / oC\nA +3 96\nB +3 104\nC –3 96\nD –3 104\nparticle charge relative mass\nelectron A B\nneutron C 1\nproton D 1\n",
+    "picture": null,
+    "answers" : [
+      {"A":"the number of electrons only"},
+      {"B": "the number of neutrons only"},
+      {"C": "the number of protons only"},
+      {"D":  "the number both of protons and of neutrons"}
+
+    ]
+
+  }
+,
+  {
+    "question": "The relative atomic mass of oxygen is 16 and that of hydrogen is 1.\nThis means that …(i)… of oxygen has the same mass as …(ii)… of hydrogen.\nWhich words correctly complete the gaps?",
+    "picture": null,
+    "answers" : [
+      {"A":"the number of electrons only"},
+      {"B": "the number of neutrons only"},
+      {"C": "the number of protons only"},
+      {"D":  "the number both of protons and of neutrons"}
+
+    ]
+
+  }
+,
+  {
+    "question": "The diagram shows a model of a molecule containing carbon, hydrogen and oxygen.\nHow many atoms of each element are in the molecule?",
+    "picture": null,
+    "answers" : [
+      {"A":"the number of electrons only"},
+      {"B": "the number of neutrons only"},
+      {"C": "the number of protons only"},
+      {"D":  "the number both of protons and of neutrons"}
+
+    ]
+
+  }
+
+,
+  {
+    "question": "Water is formed when 48g of oxygen combine with 6g of hydrogen.\nWhat mass of oxygen combines with 2 g of hydrogen?",
+    "picture": null,
+    "answers" : [
+      {"A":"12 g"},
+      {"B":"16 g"},
+      {"C":"96 g"},
+      {"D":"144 g"}
+    ]
+  }
+,
+  {
+    "question": "The diagram shows how aluminium is manufactured by electrolysis.\nWhat are the anode and cathode made of?",
+    "picture": null,
+    "answers" : [
+      {"A":"12 g"},
+      {"B":"16 g"},
+      {"C":"96 g"},
+      {"D":"144 g"}
+    ]
+  }
+,
+  {
+    "question": "After the student adds substance X to the water, the bulb lights.\nWhat is X?",
+    "picture": null,
+    "answers" : [
+      {"A":"calcium carbonate"},
+      {"B":"carbon"},
+      {"C":"copper(II) sulphate"},
+      {"D":"ethanol"}
+    ]
+  }
+,
+  {
+    "question": "The following elements have radioactive isotopes.\nWhich element is used as a source of energy because of its radioactivity?",
+    "picture": null,
+    "answers" : [
+      {"A":"carbon"},
+      {"B":"hydrogen"},
+      {"C":"iodine"},
+      {"D":"uranium"}
+    ]
+  }
+
+,
+  {
+    "question": "When hydrogen is passed over a heated metal oxide, the metal and steam are formed.\nWhat happens to the hydrogen and to the metal oxide?",
+    "picture": null,
+    "answers" : [
+      {"A":"carbon"},
+      {"B":"hydrogen"},
+      {"C":"iodine"},
+      {"D":"uranium"}
+    ]
+  }
+
+,
+  {
+    "question": "When hydrated copper(II) sulphate is heated in the apparatus shown, solid X and liquid Y are\nproduced.\nWhich changes are noticed when liquid Y is added to cold solid X?",
+    "picture": null,
+    "answers" : [
+      {"A":"carbon"},
+      {"B":"hydrogen"},
+      {"C":"iodine"},
+      {"D":"uranium"}
+    ]
+  }
+
+,
+  {
+    "question": "A solution of hydrogen peroxide releases oxygen slowly at room temperature.\nhydrogen peroxide → water + oxygen\nThe diagrams show the effect of adding blood to the solution.\nWhat could be the reason for the observed change?",
+    "picture": null,
+    "answers" : [
+      {"A":"Blood contains an enzyme."},
+      {"B":"Blood contains water."},
+      {"C":"The hydrogen peroxide becomes more concentrated."},
+      {"D":"The hydrogen peroxide is neutralised by blood."}
+    ]
+  }
+
+,
+  {
+    "question": "A liquid X reacts with solid Y to form a gas.\nWhich two diagrams show suitable methods for investigating the speed of the reaction?",
+    "picture": null,
+    "answers" : [
+      {"A":"1 and 3"},
+      {"B":"1 and 4"},
+      {"C":"2 and 3"},
+      {"D":" 2 and 4"}
+    ]
+  }
+
+,
+  {
+    "question": "Which substance does not form copper(II) sulphate with warm, dilute sulphuric acid?",
+    "picture": null,
+    "answers" : [
+      {"A":"copper"},
+      {"B":"copper(II) carbonate"},
+      {"C":"copper(II) hydroxide"},
+      {"D":"copper(II) oxide"}
+    ]
+  }
+
+,
+  {
+    "question": "Which substance does not form copper(II) sulphate with warm, dilute sulphuric acid?",
+    "picture": null,
+    "answers" : [
+      {"A":"copper"},
+      {"B":"copper(II) carbonate"},
+      {"C":"copper(II) hydroxide"},
+      {"D":"copper(II) oxide"}
+    ]
+  }
+
+,
+  {
+    "question": "Water is added to a test-tube containing dilute sulphuric acid of pH 4.\nWhat could be the pH of the resulting solution?",
+    "picture": null,
+    "answers" : [
+      {"A":"8"},
+      {"B":"6"},
+      {"C":"4"},
+      {"D":"2"}
+    ]
+  }
+
+,
+  {
+    "question": "Magnesium, on the left of Period Two of the Periodic Table, is more metallic than chlorine on the\nright of this Period.\nWhy is this?\nMagnesium has",
+    "picture": null,
+    "answers" : [
+      {"A":"fewer electrons"},
+      {"B":"fewer protons."},
+      {"C":"fewer full shells of electrons."},
+      {"D":"D fewer outermost electrons."}
+    ]
+  }
+
+,
+  {
+    "question": "Magnesium, on the left of Period Two of the Periodic Table, is more metallic than chlorine on the\nright of this Period.\nWhy is this?\nMagnesium has",
+    "picture": null,
+    "answers" : [
+      {"A":"fewer electrons"},
+      {"B":"fewer protons."},
+      {"C":"fewer full shells of electrons."},
+      {"D":"D fewer outermost electrons."}
+    ]
+  }
+,
+  {
+    "question": "An inert gas X is used to fill weather balloons.\nWhich descriptions of X are correct? ",
+    "picture": null,
+    "answers" : [
+      {"A":"fewer electrons"},
+      {"B":"fewer protons."},
+      {"C":"fewer full shells of electrons."},
+      {"D":"D fewer outermost electrons."}
+    ]
+  }
+
+,
+  {
+    "question": "A student is asked to complete two sentences.\nMetallic and non-metallic elements are classified in the …(i)… This can be used to …(ii)… the\nproperties of elements.\nWhich words correctly complete the gaps?",
+    "picture": null,
+    "answers" : [
+      {"A":"fewer electrons"},
+      {"B":"fewer protons."},
+      {"C":"fewer full shells of electrons."},
+      {"D":"D fewer outermost electrons."}
+    ]
+  }
+,
+  {
+    "question": "Which material is an alloy that contains a non-metallic element?",
+    "picture": null,
+    "answers" : [
+      {"A":"brass"},
+      {"B":"haematite"},
+      {"C":"manganese"},
+      {"D":"steel"}
+    ]
+  }
+,
+  {
+    "question": "The table gives information about the reactivity of three metals P, Q and R.\nWhat is the order of reactivity of P, Q and R?",
+    "picture": null,
+    "answers" : [
+      {"A":"brass"},
+      {"B":"haematite"},
+      {"C":"manganese"},
+      {"D":"steel"}
+    ]
+  }
+,
+  {
+    "question": "The bodies of aircraft are often made using aluminium.\nWhich two properties of aluminium make it suitable for this purpose?",
+    "picture": null,
+    "answers" : [
+      {"A":"brass"},
+      {"B":"haematite"},
+      {"C":"manganese"},
+      {"D":"steel"}
+    ]
+  }
+  ,
+  {
+    "question": "Which raw materials are used in the manufacture of iron?",
+    "picture": null,
+    "answers" : [
+      {"A":"bauxite and lime"},
+      {"B":"bauxite and limestone"},
+      {"C":"haematite and lime"},
+      {"D":"haematite and limestone"}
+    ]
+  }
+,
+  {
+    "question": " In a car industry, approximately 45000 litres of water are required to produce a single car.\nThis water does not need to be very pure.\nWhich purification methods would be suitable and economic to use?",
+    "picture": null,
+    "answers" : [
+      {"A":"bauxite and lime"},
+      {"B":"bauxite and limestone"},
+      {"C":"haematite and lime"},
+      {"D":"haematite and limestone"}
+    ]
+  }
+
+,
+  {
+    "question": "The pie-chart shows the composition of air.\n What are the gases in parts 1, 2 and 3 of the pie-chart?",
+    "picture": null,
+    "answers" : [
+      {"A":"bauxite and lime"},
+      {"B":"bauxite and limestone"},
+      {"C":"haematite and lime"},
+      {"D":"haematite and limestone"}
+    ]
+  }
+,
+  {
+    "question": "A steel works and a chemical works are built near to a city. The limestone buildings in the city\nbegin to crumble.\nWhich gas is most likely to cause this damage?",
+    "picture": null,
+    "answers" : [
+      {"A":"carbon dioxide"},
+      {"B":"carbon monoxide"},
+      {"C":"oxygen"},
+      {"D":" sulphur dioxide"}
+    ]
+  }
+,
+  {
+    "question": "Which methods can be used to prevent the rusting of an iron girder of a bridge?",
+    "picture": null,
+    "answers" : [
+      {"A":"carbon dioxide"},
+      {"B":"carbon monoxide"},
+      {"C":"oxygen"},
+      {"D":" sulphur dioxide"}
+    ]
+  }
+,
+  {
+    "question": "A student heats a mixture of ammonium chloride and calcium hydroxide. She tests the gas given\noff with damp red litmus paper.\nWhat is the name of the gas and the final colour of the litmus paper?",
+    "picture": null,
+    "answers" : [
+      {"A":"carbon dioxide"},
+      {"B":"carbon monoxide"},
+      {"C":"oxygen"},
+      {"D":" sulphur dioxide"}
+    ]
+  },
+  {
+    "question": " A newspaper article claims that carbon dioxide is formed as follows.\n1 during respiration\n2 when calcium carbonate reacts with hydrochloric acid\n3 when methane burns in air\nWhich statements are correct?",
+    "picture": null,
+    "answers" : [
+      {"A":"1, 2 and 3"},
+      {"B":"1 and 2 only"},
+      {"C":"1 and 3 only"},
+      {"D":"2 and 3 only"}
+    ]
+  }
+,
+  {
+    "question": "The diagram shows how the pH of an industrial waste changes when substance X is added to it \nn What is the name of this compound?",
+    "picture": null,
+    "answers" : [
+      {"A":"ethane"},
+      {"B":"ethanoic acid"},
+      {"C":"ethanol"},
+      {"D":"ethene"}
+    ]
+  }
+,
+  {
+    "question": "Bitumen is a substance obtained from the fractional distillation of petroleum.\nWhat are the boiling points and the sizes of the molecules in bitumen?",
+    "picture": null,
+    "answers" : [
+      {"A":"ethane"},
+      {"B":"ethanoic acid"},
+      {"C":"ethanol"},
+      {"D":"ethene"}
+    ]
+  }
+,
+  {
+    "question": "Which hydrocarbons in the table are members of the same homologous series?",
+    "picture": null,
+    "answers" : [
+      {"A":"ethane"},
+      {"B":"ethanoic acid"},
+      {"C":"ethanol"},
+      {"D":"ethene"}
+    ]
+  }
+,
+  {
+    "question": "Which of the molecules shown can be polymerised?",
+    "picture": null,
+    "answers" : [
+      {"A":"ethane"},
+      {"B":"ethanoic acid"},
+      {"C":"ethanol"},
+      {"D":"ethene"}
+    ]
+  }
+,
+  {
+    "question": " Which conditions are necessary to ferment sugar into ethanol?",
+    "picture": null,
+    "answers" : [
+      {"A":"ethane"},
+      {"B":"ethanoic acid"},
+      {"C":"ethanol"},
+      {"D":"ethene"}
+    ]
+  }
+
+
+
+
+
+]

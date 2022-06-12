@@ -43,7 +43,7 @@ export default function LoginForm() {
       })
           .then(function (response) {
 
-
+            console.log(response.data.token);
             setUserSession(response.data.token, response.data.user,response.data.email)
             navigate('/app', { replace: true });
             console.log(response);

@@ -71,7 +71,6 @@ export default function Register() {
             <Link underline="always" color="textPrimary">
               Privacy Policy
             </Link>
-            .
           </Typography>
 
           <Typography
