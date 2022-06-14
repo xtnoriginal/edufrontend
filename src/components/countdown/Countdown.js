@@ -25,7 +25,7 @@ const renderTime = (dimension, time) => {
 const getTimeSeconds = (time) => (minuteSeconds - time) | 0;
 const getTimeMinutes = (time) => ((time % hourSeconds) / minuteSeconds) | 0;
 const getTimeHours = (time) => ((time % daySeconds) / hourSeconds) | 0;
-const getTimeDays = (time) => (time / daySeconds) | 0;
+
 
 export default function Countdown() {
     const stratTime = Date.now() / 1000; // use UNIX timestamp in seconds
@@ -33,7 +33,6 @@ export default function Countdown() {
 
     const remainingTime = endTime - stratTime;
     const days = Math.ceil(remainingTime / daySeconds);
-    const daysDuration = days * daySeconds;
 
     return (
         <Stack align direction="row-reverse">

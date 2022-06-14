@@ -1,13 +1,6 @@
-import {styled} from "@mui/material/styles";
 import {Container, Grid, Stack, Typography} from "@mui/material";
 import Logo from "../Logo";
 
-const RootStyle = styled('div')({
-    display: 'flex',
-    minHeight: '100%',
-    overflow: 'hidden',
-    padding: 0,
-});
 
 export default function Footer(){
     return(

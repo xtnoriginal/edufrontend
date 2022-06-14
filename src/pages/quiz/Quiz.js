@@ -9,18 +9,15 @@ import {
     MobileStepper, Radio,
     RadioGroup,
     Snackbar,
-    Stack,
     Typography
 } from '@mui/material';
 // components
 import Page from '../../components/Page';
-import DotsMobileStepper from "../../components/DotsMobileStepper";
 import FormControl from "@mui/material/FormControl";
-import Replay from '@material-ui/icons/Replay';
 import MuiAlert from "@material-ui/lab/Alert"
 import axios from "axios";
-import Logo from "../../components/Logo";
 import Countdown from "../../components/countdown/Countdown";
+import DataTable from "../../sections/app/quiz/DataTable";
 
 
 //
@@ -144,49 +141,70 @@ export default class Quiz extends React.Component{
                         {this.state.Quiz_Set.question}
                     </p>
 
-                    <Countdown/>
 
 
-
-                    <Card>
+                   <Card>
                         <CardContent>
+
                             <div>
+
+
+
                                 {this.state.Quiz_Set.map((item,index)=>{
 
                                     if(Math.abs(this.state.activeStep-index)<=0) {
+                                        const  picture = "http://localhost:8080/images/papers/"+item["picture"]
+                                        console.log(picture);
                                         return (
                                             <div>
                                                 <LinearProgress variant="determinate" value={60} />
 
-                                                <Container justify = "center" alignItems="center">
-                                                    <img src="/static/demoimage.png"/>
-                                                </Container>
+
+                                                {item['picture'] != null &&
+                                                        <Container justify = "center" alignItems="center">
+                                                            <img src={picture} alt="Question"/>
+                                                        </Container>
+                                                }
+
+
 
                                                 <Typography variant="h6">{item.question}</Typography>
-                                                <FormControl sx={{marginTop:5, marginBottom:5}}>
-                                                    <FormLabel id="answerslabel">Answers</FormLabel>
-                                                    <RadioGroup
-                                                        aria-labelledby="demo-radio-buttons-group-label"
-                                                        defaultValue="female"
-                                                        name="radio-buttons-group"
-                                                    >
-                                                    {item.answers.map((question,id)=>{
 
-                                                        const position = Object.keys(question)[0];
-                                                        return(
+                                                { item.answers != null?
+                                                    <FormControl sx={{marginTop: 5, marginBottom: 5}}>
+                                                        <FormLabel id="answerslabel">Answers</FormLabel>
+                                                        <RadioGroup
+                                                            aria-labelledby="demo-radio-buttons-group-label"
+                                                            defaultValue="female"
+                                                            name="radio-buttons-group"
+                                                        >
+                                                            {item.answers.map((question, id) => {
 
-                                                            <FormControlLabel value={position} control={<Radio />} label={position+") "+question[position]} />
+                                                                const position = Object.keys(question)[0];
+                                                                return (
 
-                                                        )
-                                                    })}
-                                                    </RadioGroup>
-                                                </FormControl>
+                                                                    <FormControlLabel value={position}
+                                                                                      control={<Radio/>}
+                                                                                      label={position + ") " + question[position]}/>
+
+                                                                )
+                                                            })}
+                                                        </RadioGroup>
+                                                    </FormControl>
+                                                    :
+                                                    <>
+                                                        <Typography>Answers</Typography>
+                                                        <DataTable/>
+                                                    </>
+                                                }
                                             </div>
                                         )
                                     }else {
                                         return null
                                     }
                                 })}
+
+
 
                                 <div className="Quiz-MobileStepper">
                                     <MobileStepper  variant="dots" steps={this.state.Quiz_Set.length} position="static" activeStep={this.state.activeStep}
@@ -208,90 +226,15 @@ export default class Quiz extends React.Component{
                                                     }
                                     />
                                 </div>
-
                                 {this.Snackbarrender()}
+
                             </div>
+
                         </CardContent>
                     </Card>
 
 
-                    {/*<Card >
-                        <CardContent>
 
-                            <div className="Quiz_render_container">
-                                { this.state.booleanonsubmit ?
-                                    <div className="Quiz-DisplayResult">
-                                        <h2> The score is {this.state.Total} Out Of 8 </h2>
-                                        <Button onClick={()=>{this.setState({booleanonsubmit:false,activeStep:0,Total:0})}}> <Replay/> Try again </Button>
-                                    </div>
-                                    :
-                                    <div className="Quiz_container_display">
-                                        {this.state.Quiz_Set.map((item,index)=>{
-                                            if( Math.abs(this.state.activeStep - index)<=0)
-                                            {
-                                                return (
-                                                    <div>
-                                                        <div className="Quiz_que">{item.question}</div>
-
-                                                        <div className="Quiz_options"> Options are : </div>
-                                                        {item.options.map((ans,index_ans)=>{
-                                                            index_ans = index_ans + 1
-                                                            return (
-                                                                <div key={index_ans} className="Quiz_multiple_options">
-
-                                                                    {index_ans}] {1}
-
-                                                                    <input
-                                                                        key={index_ans}
-                                                                        type="radio"
-                                                                        name={index_ans}
-                                                                        value={ans.answers}
-                                                                        checked={!!ans.selected}
-                                                                        onChange={this.onInputChange}
-                                                                    />
-                                                                </div>
-                                                            )
-                                                        })}
-
-
-                                                    </div>
-                                                )
-                                            }else{
-                                                return null
-                                            }
-
-                                        })}
-
-                                        <div className="Quiz-MobileStepper">
-                                            <MobileStepper  variant="dots" steps={this.state.Quiz_Set.length} position="static" activeStep={this.state.activeStep}
-                                                            nextButton={
-                                                                this.state.activeStep === 7 ?
-                                                                    <Button size="small" onClick={this.onsubmit}>
-                                                                        Submit
-                                                                    </Button>
-                                                                    :
-                                                                    <Button size="small" onClick={this.handleNext} disabled={this.state.activeStep === this.state.Quiz_Set.length}>
-                                                                        Next
-                                                                    </Button>
-
-                                                            }
-                                                            backButton={
-                                                                <Button size="small" onClick={this.handleBack} disabled={this.state.activeStep === 0}>
-                                                                    Back
-                                                                </Button>
-                                                            }
-                                            />
-                                        </div>
-                                    </div>
-                                }
-                                {this.Snackbarrender()}
-                            </div>
-
-
-
-                        </CardContent>
-                    </Card>
-*/}
 
 
 
