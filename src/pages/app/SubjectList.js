@@ -24,6 +24,7 @@ import SearchNotFound from "../../components/SearchNotFound";
 import {Label} from "@mui/icons-material";
 import SubjectListToolbar from "../../sections/app/subject/SubjectListToolbar";
 import SubjectListHead from "../../sections/app/subject/SubjectListHead";
+import AppService from "../../services/AppService";
 
 
 
@@ -71,6 +72,10 @@ function applySortFilter(array, comparator, query) {
 
 export default function SubjectList() {
 
+    //Get the papers available for the paper
+    //const  AppService = new AppService();
+    //const papers = AppService.getPapers();
+
     let { id } = useParams();
 
     const [page, setPage] = useState(0);
@@ -90,6 +95,9 @@ export default function SubjectList() {
     const handleChangePage = (event, newPage) => {
         setPage(newPage);
     };
+
+
+
 
     const handleChangeRowsPerPage = (event) => {
         setRowsPerPage(parseInt(event.target.value, 10));
