@@ -6,6 +6,7 @@ import {Box, Stack, AppBar, Toolbar, IconButton, Button, Typography, Link} from 
 import Iconify from './Iconify';
 import Logo from "./Logo";
 import { Link as RouterLink } from 'react-router-dom';
+import useResponsive from "../hooks/useResponsive";
 //
 
 
@@ -41,6 +42,9 @@ Navbar.propTypes = {
 };
 
 export default function Navbar({ onOpenSidebar }) {
+
+    const isDesktop = useResponsive('up', 'lg');
+
     return (
         <RootStyle>
             <ToolbarStyle>
@@ -54,28 +58,27 @@ export default function Navbar({ onOpenSidebar }) {
                 <Box sx={{ flexGrow: 1 }} />
 
 
+                {isDesktop &&(
 
-                <Stack direction="row" alignItems="center" spacing={{ xs: 5, sm: 4 }}>
+                    <Stack direction="row" alignItems="center" spacing={{xs: 5, sm: 4}}>
                     <Link to="/home"  underline="none"  component={RouterLink}>
-                        Home
+                    Home
                     </Link>
                     <Link to="/about"  underline="none"  component={RouterLink}>
-                        About
+                    About
                     </Link>
                     <Link to="/team"  underline="none"  component={RouterLink}>
-                        Our Team
+                    Our Team
                     </Link>
-
                     <Link to="/blog"  underline="none"  component={RouterLink}>
-                        Blog
+                    Blog
                     </Link>
-
-
                     <Link to="/login" underline="none"  component={RouterLink}>
-                        <Button  to="/login" variant="contained" > Sign In</Button>
+                    <Button  to="/login" variant="contained" > Sign In</Button>
                     </Link>
 
-                </Stack>
+                    </Stack>
+                )}
 
                 <Box sx={{ flexGrow: 0.3}} />
             </ToolbarStyle>

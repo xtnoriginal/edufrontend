@@ -2,7 +2,7 @@
 import { Stack, Button, Divider, Typography } from '@mui/material';
 // component
 import Iconify from '../../components/Iconify';
-import GoogleLogin, {useGoogleLogin} from "react-google-login";
+import {useGoogleLogin} from "react-google-login";
 
 // ----------------------------------------------------------------------
 

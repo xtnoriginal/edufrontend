@@ -9,19 +9,17 @@ import {
     MobileStepper, Radio,
     RadioGroup,
     Snackbar,
-    Stack,
     Typography
 } from '@mui/material';
 // components
 import Page from '../../components/Page';
-import DotsMobileStepper from "../../components/DotsMobileStepper";
 import FormControl from "@mui/material/FormControl";
-import Replay from '@material-ui/icons/Replay';
 import MuiAlert from "@material-ui/lab/Alert"
 import axios from "axios";
-import Logo from "../../components/Logo";
 
 
+
+//
 //
 
 // ----------------------------------------------------------------------
@@ -134,7 +132,7 @@ export default class Quiz extends React.Component{
 
     render(){
         return (
-            <Page title="Dashboard: Products | Minimal-UI">
+            <Page title="Quiz | Eduproject">
                 <Container>
                     <Typography variant="h4" sx={{ mb: 5 }}>
                         Quiz

@@ -1,7 +1,7 @@
 import { Link as RouterLink } from 'react-router-dom';
 // material
-import {Grid, Button, Container, Stack, Typography, CardContent, Card, Checkbox} from '@mui/material';
-import Iconify from "../../components/Iconify";
+import { Button, Container, Stack, Typography, CardContent, Card} from '@mui/material';
+
 import Page from "../../components/Page";
 import {QuizOptions} from "../../sections/app/quiz/QuizOptions";
 // components

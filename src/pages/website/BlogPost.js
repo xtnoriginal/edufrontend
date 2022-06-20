@@ -1,9 +1,7 @@
 import {Component} from "react";
-import { Link as RouterLink } from 'react-router-dom';
 // material
-import { Grid, Button, Container, Stack, Typography } from '@mui/material';
-import {BlogPostCard, BlogPostsSearch, BlogPostsSort} from "../../sections/@dashboard/blog";
-import POSTS from '../../_mocks_/blog';
+import { Container,  Typography } from '@mui/material';
+
 import Page from "../../components/Page";
 import axios from "axios";
 import Comments from "../../sections/@dashboard/blog/Comments";

@@ -3,9 +3,9 @@ import { Box, Grid, Container, Typography } from '@mui/material';
 import Page from "../../components/Page";
 import AppSubject from "../../sections/app/subject/AppSubject";
 // components
-import {Link as RouterLink, useNavigate} from 'react-router-dom';
 import {Component} from "react";
 import axios from "axios";
+import {getToken} from "../../services/common";
 
 
 // ----------------------------------------------------------------------
@@ -22,7 +22,11 @@ export default class HomeApp extends Component{
     }
 
     componentDidMount() {
-        axios.get("http://localhost:8080/app/home/claudious")
+        axios.get("http://localhost:8080/app/home/claudious", {
+            headers: {
+                'Authorization': `token ${getToken()}`
+            }
+        })
             .then(res => {
                 const subjects = res.data["content"];
                 console.log(subjects);
