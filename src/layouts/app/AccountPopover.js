@@ -8,7 +8,6 @@ import Iconify from '../../components/Iconify';
 import MenuPopover from '../../components/MenuPopover';
 //
 import account from '../../_mocks_/account';
-import axios from "axios";
 import {getEmail, getToken, getUser} from "../../services/common";
 
 // ----------------------------------------------------------------------
@@ -46,7 +45,7 @@ export default function AccountPopover() {
 
 
   const name = getUser();
-  const token = getToken();
+  //const token = getToken();
   const email = getEmail();
 
   const navigate = useNavigate();

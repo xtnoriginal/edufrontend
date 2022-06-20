@@ -1,22 +1,9 @@
 import React  from "react";
-import {Button, Card, Container, Grid, Stack, Typography} from "@mui/material";
+import {Button, Container, Grid, Stack, Typography} from "@mui/material";
 import {Link as RouterLink} from "react-router-dom";
-import {BlogPostCard, BlogPostsSearch, BlogPostsSort} from "../../sections/@dashboard/blog";
 import Page from "../../components/Page";
-import Iconify from "../../components/Iconify";
-import {styled} from "@mui/material/styles";
-import {ProductCartWidget, ProductFilterSidebar, ProductList, ProductSort} from "../../sections/@dashboard/products";
-import PRODUCTS from "../../_mocks_/products";
-import Footer from "../../components/footer/Footer";
+import PriceBar from "../../sections/website/PriceBar";
 
-const SectionStyle = styled(Card)(({ theme }) => ({
-    width: '100%',
-    maxWidth: 464,
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    margin: theme.spacing(2, 0, 2, 2)
-}));
 
 
 
@@ -68,7 +55,21 @@ class Home extends React.Component{
 
                     </Stack>
 
+
+
+
+
                 </Container>
+
+
+                <Container maxWidth="xl">
+
+                    <PriceBar/>
+
+                </Container>
+
+
+
 
             </Page>
         );

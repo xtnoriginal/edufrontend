@@ -1,12 +1,12 @@
 import axios from 'axios';
 const API_URL = 'http://localhost:8000';
 
-export default class CustomersService{
+export default class AppService{
 
     constructor(){}
 
 
-    getCustomers() {
+    getPapers() {
         const url = `${API_URL}/api/customers/`;
         return axios.get(url).then(response => response.data);
     }
@@ -30,4 +30,5 @@ export default class CustomersService{
         const url = `${API_URL}/api/customers/${customer.pk}`;
         return axios.put(url,customer);
     }
+
 }

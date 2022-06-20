@@ -1,15 +1,12 @@
 import { filter } from 'lodash';
 import { sentenceCase } from 'change-case';
 import { useState } from 'react';
-import {Link as RouterLink, useNavigate, useParams} from 'react-router-dom';
+import { useNavigate, useParams} from 'react-router-dom';
 // material
 import {
     Card,
     Table,
     Stack,
-    Avatar,
-    Button,
-    Checkbox,
     TableRow,
     TableBody,
     TableCell,
@@ -27,7 +24,8 @@ import SearchNotFound from "../../components/SearchNotFound";
 import {Label} from "@mui/icons-material";
 import SubjectListToolbar from "../../sections/app/subject/SubjectListToolbar";
 import SubjectListHead from "../../sections/app/subject/SubjectListHead";
-import SubjectMoreMenu from "../../sections/app/subject/SubjectMoreMenu";
+import AppService from "../../services/AppService";
+
 
 
 // ----------------------------------------------------------------------
@@ -74,6 +72,10 @@ function applySortFilter(array, comparator, query) {
 
 export default function SubjectList() {
 
+    //Get the papers available for the paper
+    //const  AppService = new AppService();
+    //const papers = AppService.getPapers();
+
     let { id } = useParams();
 
     const [page, setPage] = useState(0);
@@ -93,6 +95,9 @@ export default function SubjectList() {
     const handleChangePage = (event, newPage) => {
         setPage(newPage);
     };
+
+
+
 
     const handleChangeRowsPerPage = (event) => {
         setRowsPerPage(parseInt(event.target.value, 10));
@@ -147,8 +152,8 @@ export default function SubjectList() {
                                     {filteredUsers
                                         .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                                         .map((row) => {
-                                            const { id, name, role, status, company, avatarUrl, isVerified } = row;
-                                            const isItemSelected = selected.indexOf(name) !== -1;
+                                            const { id, status} = row;
+
 
 
                                             return (

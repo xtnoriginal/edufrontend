@@ -3,7 +3,8 @@ import { Outlet } from 'react-router-dom';
 // material
 import { styled } from '@mui/material/styles';
 import Navbar from "../../components/Navbar";
-import Footer from "../../components/footer/Footer";
+import Sidebar from "./Sidebar";
+
 
 
 
@@ -39,6 +40,7 @@ export default function WebsiteLayout() {
     return (
         <RootStyle>
             <Navbar onOpenSidebar={() => setOpen(true)} />
+            <Sidebar isOpenSidebar={open} onCloseSidebar={() => setOpen(false)} />
             <MainStyle>
                 <Outlet />
             </MainStyle>

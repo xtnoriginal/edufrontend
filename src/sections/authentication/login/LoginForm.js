@@ -45,13 +45,26 @@ export default function LoginForm() {
 
             console.log(response.data.token);
             setUserSession(response.data.token, response.data.user,response.data.email)
+            formik.setSubmitting(false);
             navigate('/app', { replace: true });
             console.log(response);
 
           })
           .catch(function (error) {
-            formik.isSubmitting = false;
-            console.log(error);
+
+            if(error.response.status === 401 || error.response.status === 403 ){
+              formik.setFieldError('password','invalid password or username')
+              formik.setFieldError('email','')
+
+              console.log(error);
+
+            }else if(error.response.status ===200){
+              console.log(error);
+            }else{
+              formik.setErrors("Something went wrong, try again later or reach out to trevor@coderscampus.com")
+            }
+            formik.setSubmitting(false);
+
           });
 
 

@@ -1,9 +1,4 @@
 import {
-    Box,
-    Button,
-    Card,
-    CardContent,
-    CardHeader,
     Checkbox,
     Divider,
     FormControlLabel,
@@ -50,7 +45,7 @@ export const QuizOptions = (props) => (
                             )}
                             label="Timed Per Question"
                         />
-                        
+
                     </Grid>
 
                 </Grid>

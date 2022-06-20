@@ -1,11 +1,10 @@
 // material
 import { alpha, styled } from '@mui/material/styles';
 import {Card, Link, Typography} from '@mui/material';
-// utils
-import { fShortenNumber } from '../../../utils/formatNumber';
+
 // component
 import Iconify from '../../../components/Iconify';
-import {Link as RouterLink, useNavigate} from "react-router-dom";
+import {Link as RouterLink} from "react-router-dom";
 
 // ----------------------------------------------------------------------
 
@@ -37,7 +36,7 @@ const IconWrapperStyle = styled('div')(({ theme }) => ({
 // ----------------------------------------------------------------------
 
 
-const icons = {
+/*const icons = {
     Chemistry : 'ic:baseline-science',
     Mathematics: 'tabler:numbers',
     Biology:'ic:outline-biotech',
@@ -47,7 +46,7 @@ const icons = {
     VPA:'emojione-monotone:performing-arts',
     English: 'icon-park-outline:english',
     Computer_Science: 'charm:binary'
-}
+}*/
 
 
 export default function AppSubject(props) {
