@@ -3,6 +3,7 @@ import {Button, Container, Grid, Stack, Typography} from "@mui/material";
 import {Link as RouterLink} from "react-router-dom";
 import Page from "../../components/Page";
 import PriceBar from "../../sections/website/PriceBar";
+import {height} from "@mui/system";
 
 
 
@@ -13,7 +14,7 @@ class Home extends React.Component{
     render() {
         return(
             <Page title="Home | Eduproject">
-                <Container maxWidth="xl">
+                <Container sx={{ height: '100vh' }} maxWidth="xl">
 
                     <Grid
                         sx={{
@@ -29,15 +30,8 @@ class Home extends React.Component{
                             </Typography>
                             <Button  to="/register" variant="outlined" sx={{marginTop:3}} component={RouterLink}> Register</Button>
                         </div>
-
                         <img alt="register" src="/static/illustrations/illustration_avatar.png" />
-
-
                     </Grid>
-                </Container>
-
-
-                <Container maxWidth="xl">
 
                     <Typography variant="h4" sx={{ mb: 5 }}>
                         Available
@@ -55,11 +49,8 @@ class Home extends React.Component{
 
                     </Stack>
 
-
-
-
-
                 </Container>
+
 
 
                 <Container maxWidth="xl">

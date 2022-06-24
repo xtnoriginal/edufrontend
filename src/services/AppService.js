@@ -1,13 +1,13 @@
 import axios from 'axios';
-const API_URL = 'http://localhost:8000';
+const API_URL = 'http://localhost:8080';
 
 export default class AppService{
 
     constructor(){}
 
 
-    getPapers() {
-        const url = `${API_URL}/api/customers/`;
+    getPapers(subject) {
+        const url = `${API_URL}/app/subject/${subject}`;
         return axios.get(url).then(response => response.data);
     }
     getCustomersByURL(link){

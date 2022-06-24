@@ -8,7 +8,7 @@ import {
     FormLabel, LinearProgress,
     MobileStepper, Radio,
     RadioGroup,
-    Snackbar,
+    Snackbar, Stack,
     Typography
 } from '@mui/material';
 // components
@@ -18,6 +18,8 @@ import MuiAlert from "@material-ui/lab/Alert"
 import axios from "axios";
 import Countdown from "../../components/countdown/Countdown";
 import DataTable from "../../sections/app/quiz/DataTable";
+import {Link as RouterLink} from "react-router-dom";
+import Iconify from "../../components/Iconify";
 
 
 //
@@ -134,9 +136,17 @@ export default class Quiz extends React.Component{
         return (
             <Page title="Quiz | Eduproject">
                 <Container>
-                    <Typography variant="h4" sx={{ mb: 5 }}>
-                        Quiz
-                    </Typography>
+
+                    <Stack direction="row" alignItems="center" justifyContent="space-between" mb={5}>
+                        <Typography variant="h4" sx={{ mb: 5 }}>
+                            Quiz
+                        </Typography>
+
+                        <Countdown/>
+
+                    </Stack>
+
+
                     <p>
                         {this.state.Quiz_Set.question}
                     </p>
@@ -155,9 +165,10 @@ export default class Quiz extends React.Component{
                                     if(Math.abs(this.state.activeStep-index)<=0) {
                                         const  picture = "http://localhost:8080/images/papers/"+item["picture"]
                                         console.log(picture);
+
                                         return (
                                             <div>
-                                                <LinearProgress variant="determinate" value={60} />
+                                                <LinearProgress variant="determinate" value={this.state.activeStep*(1/40)*100} />
 
 
                                                 {item['picture'] != null &&
@@ -175,7 +186,6 @@ export default class Quiz extends React.Component{
                                                         <FormLabel id="answerslabel">Answers</FormLabel>
                                                         <RadioGroup
                                                             aria-labelledby="demo-radio-buttons-group-label"
-                                                            defaultValue="female"
                                                             name="radio-buttons-group"
                                                         >
                                                             {item.answers.map((question, id) => {

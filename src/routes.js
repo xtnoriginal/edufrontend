@@ -21,6 +21,7 @@ import About from "./pages/website/About";
 import Settings from "./pages/Settings";
 import Profile from "./pages/Profile";
 import BlogPost from "./pages/website/BlogPost";
+import Team from "./pages/website/Team";
 
 
 // ----------------------------------------------------------------------
@@ -35,6 +36,7 @@ export default function Router() {
         { path: 'home', element: <Home/> },
         { path: 'blog', element: <Blog /> },
         { path: 'about', element: <About /> },
+        { path: 'team', element: <Team/> },
         { path: 'blog/post/:id', element: <BlogPost/> },
         {}
       ]}

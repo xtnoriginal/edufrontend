@@ -6,6 +6,9 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import {FormLabel, Radio} from "@mui/material";
+import FormControl from "@mui/material/FormControl";
+import {RadioButtonUnchecked} from "@material-ui/icons";
 
 function createData(name, calories, fat, carbs, protein) {
     return { name, calories, fat, carbs, protein };
@@ -21,14 +24,14 @@ export default function AcccessibleTable() {
     return (
         <TableContainer component={Paper}>
             <Table sx={{ minWidth: 650 }} aria-label="caption table">
-                <caption>A basic table example with a caption</caption>
                 <TableHead>
                     <TableRow>
-
+                        <TableCell align="left">Answer</TableCell>
                         {Object.keys(rows[0]).map((column,id)=> {
 
                             return (
-                                <TableCell align="right">{column}</TableCell>
+
+                                <TableCell align="left">{column}</TableCell>
                             )
 
                         })}
@@ -37,13 +40,20 @@ export default function AcccessibleTable() {
                     </TableRow>
                 </TableHead>
                 <TableBody>
+
+                    <TableCell align="left">
+                        <Radio value="A"/>
+                    </TableCell>
                     {rows.map((row) => {
                         const column = Object.keys(row);
                         return(
                             <TableRow>
+
+                                <TableCell align="left">{row[value]}</TableCell>
                                 {column.map((value) => {
                                     return(
-                                        <TableCell align="right">{row[value]}</TableCell>
+
+                                        <TableCell align="left">{row[value]}</TableCell>
                                     )
 
                                 })}
@@ -51,6 +61,7 @@ export default function AcccessibleTable() {
 
                         )
                     })}
+
 
                 </TableBody>
             </Table>

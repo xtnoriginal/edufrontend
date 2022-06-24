@@ -1,93 +1,64 @@
-import React from "react";
-import { CountdownCircleTimer } from "react-countdown-circle-timer";
-import {Stack} from "@mui/material";
 
+import React from 'react'
 
-const minuteSeconds = 60;
-const hourSeconds = 3600;
-const daySeconds = 86400;
+export  default class Countdown extends React.Component {
+    constructor() {
+        super();
+        this.state = { time: {}, seconds: 2400 };
+        this.timer = 0;
+        this.startTimer = this.startTimer.bind(this);
+        this.countDown = this.countDown.bind(this);
+    }
 
-const timerProps = {
-    isPlaying: true,
-    size: 120,
-    strokeWidth: 6
-};
+    secondsToTime(secs){
+        let hours = Math.floor(secs / (60 * 60));
 
-const renderTime = (dimension, time) => {
-    return (
-        <div className="time-wrapper">
-            <div className="time">{time}</div>
-            <div>{dimension}</div>
-        </div>
-    );
-};
+        let divisor_for_minutes = secs % (60 * 60);
+        let minutes = Math.floor(divisor_for_minutes / 60);
 
-const getTimeSeconds = (time) => (minuteSeconds - time) | 0;
-const getTimeMinutes = (time) => ((time % hourSeconds) / minuteSeconds) | 0;
-const getTimeHours = (time) => ((time % daySeconds) / hourSeconds) | 0;
+        let divisor_for_seconds = divisor_for_minutes % 60;
+        let seconds = Math.ceil(divisor_for_seconds);
 
+        let obj = {
+            "h": hours,
+            "m": minutes,
+            "s": seconds
+        };
+        return obj;
+    }
 
-export default function Countdown() {
-    const stratTime = Date.now() / 1000; // use UNIX timestamp in seconds
-    const endTime = stratTime + 243248; // use UNIX timestamp in seconds
+    componentDidMount() {
+        let timeLeftVar = this.secondsToTime(this.state.seconds);
+        this.setState({ time: timeLeftVar });
+    }
 
-    const remainingTime = endTime - stratTime;
-    const days = Math.ceil(remainingTime / daySeconds);
+    startTimer() {
+        if (this.timer == 0 && this.state.seconds > 0) {
+            this.timer = setInterval(this.countDown, 1000);
+        }
+    }
 
-    return (
-        <Stack align direction="row-reverse">
+    countDown() {
+        // Remove one second, set state so a re-render happens.
+        let seconds = this.state.seconds - 1;
+        this.setState({
+            time: this.secondsToTime(seconds),
+            seconds: seconds,
+        });
 
+        // Check if we're at zero.
+        if (seconds == 0) {
+            clearInterval(this.timer);
+        }
+    }
 
-            <CountdownCircleTimer
+    render() {
+        this.startTimer();
 
-                {...timerProps}
-                colors="#D14081"
-                duration={daySeconds}
-                size = {50}
-                initialRemainingTime={remainingTime % daySeconds}
-                onComplete={(totalElapsedTime) => ({
-                    shouldRepeat: remainingTime - totalElapsedTime > hourSeconds
-                })}
-            >
-                {({ elapsedTime, color }) => (
-                    <span style={{ color }}>
-            {renderTime("hrs", getTimeHours(daySeconds - elapsedTime))}
-          </span>
-                )}
-            </CountdownCircleTimer>
-            <CountdownCircleTimer
-                {...timerProps}
-                colors="#EF798A"
-                size = {50}
-                duration={hourSeconds}
-                initialRemainingTime={remainingTime % hourSeconds}
-                onComplete={(totalElapsedTime) => ({
-                    shouldRepeat: remainingTime - totalElapsedTime > minuteSeconds
-                })}
-            >
-                {({ elapsedTime, color }) => (
-                    <span style={{ color }}>
-            {renderTime("min", getTimeMinutes(hourSeconds - elapsedTime))}
-          </span>
-                )}
-            </CountdownCircleTimer>
-            <CountdownCircleTimer
-                {...timerProps}
-                colors="#218380"
-                duration={minuteSeconds}
-                size = {50}
-                initialRemainingTime={remainingTime % minuteSeconds}
-                onComplete={(totalElapsedTime) => ({
-                    shouldRepeat: remainingTime - totalElapsedTime > 0
-                })}
-            >
-                {({ elapsedTime, color }) => (
-                    <span style={{ color }}>
-            {renderTime("sec", getTimeSeconds(elapsedTime))}
-          </span>
-                )}
-            </CountdownCircleTimer>
-
-        </Stack>
-    );
+        return(
+            <div>
+             {this.state.time.m}min  {this.state.time.s}sec
+            </div>
+        );
+    }
 }

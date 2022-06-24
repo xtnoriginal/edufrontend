@@ -73,7 +73,7 @@ function applySortFilter(array, comparator, query) {
 export default function SubjectList() {
 
     //Get the papers available for the paper
-    //const  AppService = new AppService();
+
     //const papers = AppService.getPapers();
 
     let { id } = useParams();
@@ -120,9 +120,11 @@ export default function SubjectList() {
 
     const isUserNotFound = filteredUsers.length === 0;
     const subject = id;
+    let  appService = new AppService();
+    const PAPERS = appService.getPapers("physics");
 
     return (
-        <Page title="User | Minimal-UI">
+        <Page title="User | Eduproject">
             <Container>
                 <Stack direction="row" alignItems="center" justifyContent="space-between" mb={5}>
                     <Typography variant="h4" gutterBottom>
@@ -145,7 +147,7 @@ export default function SubjectList() {
                                     order={order}
                                     orderBy={orderBy}
                                     headLabel={TABLE_HEAD}
-                                    rowCount={USERLIST.length}
+                                    rowCount={PAPERS.length}
                                     onRequestSort={handleRequestSort}
                                 />
                                 <TableBody>
