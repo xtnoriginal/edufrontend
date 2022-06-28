@@ -51,11 +51,6 @@ const IconWrapperStyle = styled('div')(({ theme }) => ({
 
 export default function AppSubject(props) {
 
-
-
-
-
-
     const subject = props.subject;
     const link = 'subject/' +subject.name;
 

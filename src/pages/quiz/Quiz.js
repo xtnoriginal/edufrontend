@@ -20,6 +20,7 @@ import Countdown from "../../components/countdown/Countdown";
 import DataTable from "../../sections/app/quiz/DataTable";
 import {Link as RouterLink} from "react-router-dom";
 import Iconify from "../../components/Iconify";
+import {getAccessToken} from "../../services/common";
 
 
 //
@@ -46,11 +47,14 @@ export default class Quiz extends React.Component{
     }
 
     componentDidMount() {
-        axios.get("http://localhost:8080/quiz/sub")
+        axios.get("http://localhost:8080/quiz/sub", {
+            headers: {
+                Authorization: `Bearer ${getAccessToken()}`
+            }}
+        )
             .then(res => {
                 const Quiz_Set  = res.data;
-                console.log(Quiz_Set );
-
+                console.log(Quiz_Set )
                 this.setState({ Quiz_Set });
             })
     }

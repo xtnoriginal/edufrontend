@@ -21,7 +21,7 @@ export default class BlogPost extends Component{
     }
 
     componentDidMount() {
-        axios.get("http://localhost:8080/blog/article/National%20Basketball")
+        axios.get("http://localhost:8080/api/blog/article/National%20Basketball")
             .then(res => {
                 const blogpost = res.data;
 

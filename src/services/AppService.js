@@ -1,14 +1,19 @@
 import axios from 'axios';
+import {getAccessToken} from "./common";
 const API_URL = 'http://localhost:8080';
 
 export default class AppService{
 
-    constructor(){}
+
 
 
     getPapers(subject) {
         const url = `${API_URL}/app/subject/${subject}`;
-        return axios.get(url).then(response => response.data);
+        return axios.get(url, {
+            headers: {
+                Authorization: `Bearer ${getAccessToken()}`
+            }
+        }).then(response => response.data);
     }
     getCustomersByURL(link){
         const url = `${API_URL}${link}`;

@@ -7,39 +7,35 @@ const getIcon = (name) => <Iconify icon={name} width={22} height={22} />;
 
 const sidebarConfig = [
   {
-    title: 'dashboard',
-    path: '/dashboard/app',
+    title: 'Home',
+    path: '',
     icon: getIcon('eva:pie-chart-2-fill')
   },
   {
-    title: 'user',
-    path: '/dashboard/user',
+    title: 'About',
+    path: '/about',
     icon: getIcon('eva:people-fill')
   },
   {
-    title: 'product',
-    path: '/dashboard/products',
-    icon: getIcon('eva:shopping-bag-fill')
-  },
-  {
-    title: 'blog',
-    path: '/dashboard/blog',
+    title: 'Our Team',
+    path: '/team',
     icon: getIcon('eva:file-text-fill')
   },
   {
-    title: 'login',
+    title: 'Blog',
+    path: '/blog',
+    icon: getIcon('eva:alert-triangle-fill')
+  }
+    ,
+  {
+    title: 'Sign In',
     path: '/login',
     icon: getIcon('eva:lock-fill')
   },
   {
-    title: 'register',
+    title: 'Register',
     path: '/register',
     icon: getIcon('eva:person-add-fill')
-  },
-  {
-    title: 'Not found',
-    path: '/404',
-    icon: getIcon('eva:alert-triangle-fill')
   }
 ];
 

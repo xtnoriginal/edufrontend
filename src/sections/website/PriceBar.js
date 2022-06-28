@@ -1,4 +1,3 @@
-import {Grid3x3} from "@mui/icons-material";
 import PriceCard from "./PriceCard";
 import {Grid} from "@mui/material";
 

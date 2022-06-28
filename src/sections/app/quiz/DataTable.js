@@ -6,13 +6,8 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import {FormLabel, Radio} from "@mui/material";
-import FormControl from "@mui/material/FormControl";
-import {RadioButtonUnchecked} from "@material-ui/icons";
+import { Radio} from "@mui/material";
 
-function createData(name, calories, fat, carbs, protein) {
-    return { name, calories, fat, carbs, protein };
-}
 
 const rows = [
     { "person": "A", "route": "runs across the beach, then climbs the ladder", "time_taken_s": 8},
@@ -49,7 +44,6 @@ export default function AcccessibleTable() {
                         return(
                             <TableRow>
 
-                                <TableCell align="left">{row[value]}</TableCell>
                                 {column.map((value) => {
                                     return(
 

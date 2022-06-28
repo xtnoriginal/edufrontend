@@ -44,9 +44,12 @@ export default function AccountPopover() {
   };
 
 
-  const name = getUser();
+  //const name = getUser();
   //const token = getToken();
-  const email = getEmail();
+  //const email = getEmail();
+
+  const  name ="tiri";
+  const  email ="spicectn";
 
   const navigate = useNavigate();
 

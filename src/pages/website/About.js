@@ -23,6 +23,7 @@ class About extends React.Component{
                     </Stack>
 
                     <Grid
+
                         sx={{
                             display: 'grid',
                             gap: 10,

@@ -5,7 +5,7 @@ import AppSubject from "../../sections/app/subject/AppSubject";
 // components
 import {Component} from "react";
 import axios from "axios";
-import {getToken} from "../../services/common";
+import {getAccessToken, getToken} from "../../services/common";
 
 
 // ----------------------------------------------------------------------
@@ -24,7 +24,7 @@ export default class HomeApp extends Component{
     componentDidMount() {
         axios.get("http://localhost:8080/app/home/claudious", {
             headers: {
-                'Authorization': `token ${getToken()}`
+                Authorization: `Bearer ${getAccessToken()}`
             }
         })
             .then(res => {

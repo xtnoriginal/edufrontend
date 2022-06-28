@@ -1,225 +1,163 @@
-import { filter } from 'lodash';
-import { sentenceCase } from 'change-case';
-import { useState } from 'react';
-import { useNavigate, useParams} from 'react-router-dom';
-// material
+import {Component} from "react";
+import Page from "../../components/Page";
 import {
     Card,
-    Table,
+    Container,
     Stack,
-    TableRow,
+    Table,
     TableBody,
     TableCell,
-    Container,
-    Typography,
     TableContainer,
-    TablePagination
-} from '@mui/material';
-
-//
-import USERLIST from '../../_mocks_/user';
-import Page from "../../components/Page";
+    TablePagination,
+    TableRow,
+    Typography
+} from "@mui/material";
 import Scrollbar from "../../components/Scrollbar";
+
 import SearchNotFound from "../../components/SearchNotFound";
-import {Label} from "@mui/icons-material";
-import SubjectListToolbar from "../../sections/app/subject/SubjectListToolbar";
 import SubjectListHead from "../../sections/app/subject/SubjectListHead";
-import AppService from "../../services/AppService";
+import axios from "axios";
+import {getAccessToken} from "../../services/common";
 
 
 
-// ----------------------------------------------------------------------
 
 const TABLE_HEAD = [
-    { id: 'name', label: 'Title', alignRight: false },
-    { id: 'company', label: 'Year', alignRight: false },
-    { id: 'role', label: 'Subject', alignRight: false },
-    { id: 'isVerified', label: 'Score', alignRight: false },
+    { id: 'title', label: 'Title', alignRight: false },
+    { id: 'subject', label: 'Subject', alignRight: false },
+    { id: 'score', label: 'Score', alignRight: false },
     { id: 'status', label: 'Status', alignRight: false },
-    { id: '' }
+    { id: '' },
 ];
 
-// ----------------------------------------------------------------------
 
-function descendingComparator(a, b, orderBy) {
-    if (b[orderBy] < a[orderBy]) {
-        return -1;
+
+
+
+export default  class  SubjectList extends Component{
+
+
+    state = {
+        papers:[],
+        page : 0,
+        rowsPerPage:5
     }
-    if (b[orderBy] > a[orderBy]) {
-        return 1;
+
+    componentDidMount() {
+
+        const  link = "http://localhost:8080/app/subject/physics";
+        axios.get(link,{
+            headers: {
+                Authorization: `Bearer ${getAccessToken()}`
+            }})
+            .then(res => {
+                const papers= res.data.content;
+                console.log(papers);
+
+                this.setState({papers });
+            })
     }
-    return 0;
-}
 
-function getComparator(order, orderBy) {
-    return order === 'desc'
-        ? (a, b) => descendingComparator(a, b, orderBy)
-        : (a, b) => -descendingComparator(a, b, orderBy);
-}
+    handleChangeRowsPerPage = (event) => {
+        this.setState({page:0, rowsPerPage:parseInt(event.target.value, 10) });
+    };
 
-function applySortFilter(array, comparator, query) {
-    const stabilizedThis = array.map((el, index) => [el, index]);
-    stabilizedThis.sort((a, b) => {
-        const order = comparator(a[0], b[0]);
-        if (order !== 0) return order;
-        return a[1] - b[1];
-    });
-    if (query) {
-        return filter(array, (_user) => _user.name.toLowerCase().indexOf(query.toLowerCase()) !== -1);
+
+    handleChangePage = (event, newPage) => {
+        this.setState({page:newPage});
+    };
+
+
+    handleClick = (event, name) => {
+        //const selectedIndex = selected.indexOf(name);
+        //useNavigate("/app/startquiz",{replace:true});
+    };
+
+
+
+    render() {
+
+
+
+
+
+        return(
+            <Page title="User">
+                <Container>
+                    <Stack direction="row" alignItems="center" justifyContent="space-between" mb={5}>
+                        <Typography variant="h4" gutterBottom>
+                            Physics
+                        </Typography>
+
+                    </Stack>
+
+                    <Card>
+
+                        <Scrollbar>
+                            <TableContainer sx={{ minWidth: 800 }}>
+
+                                <Table>
+                                    <SubjectListHead
+                                        headLabel={TABLE_HEAD}
+                                    />
+
+
+
+                                 {this.state.papers.slice(this.state.page *this.state.rowsPerPage, this.state.page * this.state.rowsPerPage + this.state.rowsPerPage).map((row) => {
+                                        const {id, title, subject, score, status} = row;
+                                        return(
+
+                                            <TableRow
+                                                hover
+                                                key={id}
+                                                tabIndex={-1}
+                                                role="checkbox"
+                                                onClick={this.handleClick}
+                                            >
+
+                                                <TableCell component="th" scope="row" padding="none">
+                                                    <Stack direction="row" alignItems="center" spacing={2}>
+                                                        <Typography variant="subtitle2" noWrap>
+                                                            {title}
+                                                        </Typography>
+                                                    </Stack>
+                                                </TableCell>
+                                                <TableCell align="left">{subject}</TableCell>
+                                                <TableCell align="left">{score}</TableCell>
+                                                <TableCell align="left">{status ? 'Yes' : 'No'}</TableCell>
+
+                                            </TableRow>
+
+                                        );
+                                    })}
+
+
+                                     { this.state.papers.length === 0  &&  <TableBody>
+                                            <TableRow>
+                                                <TableCell align="center" colSpan={6} sx={{ py: 3 }}>
+                                                    <SearchNotFound searchQuery="yes" />
+                                                </TableCell>
+                                            </TableRow>
+                                        </TableBody> }
+
+                                </Table>
+
+                            </TableContainer>
+                        </Scrollbar>
+
+                        <TablePagination
+                            rowsPerPageOptions={[5, 10, 25]}
+                            component="div"
+                            count={this.state.papers.length}
+                            onRowsPerPageChange={this.handleChangeRowsPerPage}
+                            onPageChange={this.handleChangePage}
+                            rowsPerPage={this.state.rowsPerPage}
+                            page={this.state.page}
+                        />
+
+                    </Card>
+                </Container>
+            </Page>
+        );
     }
-    return stabilizedThis.map((el) => el[0]);
-}
-
-export default function SubjectList() {
-
-    //Get the papers available for the paper
-
-    //const papers = AppService.getPapers();
-
-    let { id } = useParams();
-
-    const [page, setPage] = useState(0);
-    const [order, setOrder] = useState('asc');
-    const [selected, setSelected] = useState([]);
-    const [orderBy, setOrderBy] = useState('name');
-    const [filterName, setFilterName] = useState('');
-    const [rowsPerPage, setRowsPerPage] = useState(5);
-
-    const handleRequestSort = (event, property) => {
-        const isAsc = orderBy === property && order === 'asc';
-        setOrder(isAsc ? 'desc' : 'asc');
-        setOrderBy(property);
-    };
-
-
-    const handleChangePage = (event, newPage) => {
-        setPage(newPage);
-    };
-
-
-
-
-    const handleChangeRowsPerPage = (event) => {
-        setRowsPerPage(parseInt(event.target.value, 10));
-        setPage(0);
-    };
-
-    const handleFilterByName = (event) => {
-        setFilterName(event.target.value);
-    };
-
-    const navigate = useNavigate();
-
-    const handleClickByRow = (event) => {
-        navigate('/app/startquiz', { replace: true });
-    };
-
-    const emptyRows = page > 0 ? Math.max(0, (1 + page) * rowsPerPage - USERLIST.length) : 0;
-
-    const filteredUsers = applySortFilter(USERLIST, getComparator(order, orderBy), filterName);
-
-    const isUserNotFound = filteredUsers.length === 0;
-    const subject = id;
-    let  appService = new AppService();
-    const PAPERS = appService.getPapers("physics");
-
-    return (
-        <Page title="User | Eduproject">
-            <Container>
-                <Stack direction="row" alignItems="center" justifyContent="space-between" mb={5}>
-                    <Typography variant="h4" gutterBottom>
-                        {subject}
-                    </Typography>
-
-                </Stack>
-
-                <Card>
-                    <SubjectListToolbar
-                        numSelected={selected.length}
-                        filterName={filterName}
-                        onFilterName={handleFilterByName}
-                    />
-
-                    <Scrollbar>
-                        <TableContainer sx={{ minWidth: 800 }}>
-                            <Table>
-                                <SubjectListHead
-                                    order={order}
-                                    orderBy={orderBy}
-                                    headLabel={TABLE_HEAD}
-                                    rowCount={PAPERS.length}
-                                    onRequestSort={handleRequestSort}
-                                />
-                                <TableBody>
-                                    {filteredUsers
-                                        .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-                                        .map((row) => {
-                                            const { id, status} = row;
-
-
-
-                                            return (
-                                                <TableRow
-                                                    hover
-                                                    key={id}
-                                                    tabIndex={-1}
-                                                    onClick={handleClickByRow}
-
-                                                >
-
-                                                    <TableCell component="th" scope="row" padding="none">
-                                                        <Stack align="left"  direction="row" alignItems="center" spacing={2}>
-                                                            <Typography  align="right" variant="subtitle2" noWrap>
-                                                                 Paper 1
-                                                            </Typography>
-                                                        </Stack>
-                                                    </TableCell>
-                                                    <TableCell align="left">2021</TableCell>
-                                                    <TableCell align="left">{subject}</TableCell>
-                                                    <TableCell align="left">100%</TableCell>
-                                                    <TableCell align="left">
-                                                        <Label
-                                                            variant="ghost"
-                                                            color={(status === 'banned' && 'error') || 'success'}
-                                                        >
-                                                            {sentenceCase(status)}
-                                                        </Label>
-                                                    </TableCell>
-
-
-                                                </TableRow>
-                                            );
-                                        })}
-                                    {emptyRows > 0 && (
-                                        <TableRow style={{ height: 53 * emptyRows }}>
-                                            <TableCell colSpan={6} />
-                                        </TableRow>
-                                    )}
-                                </TableBody>
-                                {isUserNotFound && (
-                                    <TableBody>
-                                        <TableRow>
-                                            <TableCell align="center" colSpan={6} sx={{ py: 3 }}>
-                                                <SearchNotFound searchQuery={filterName} />
-                                            </TableCell>
-                                        </TableRow>
-                                    </TableBody>
-                                )}
-                            </Table>
-                        </TableContainer>
-                    </Scrollbar>
-
-                    <TablePagination
-                        rowsPerPageOptions={[5, 10, 25]}
-                        component="div"
-                        count={USERLIST.length}
-                        rowsPerPage={rowsPerPage}
-                        page={page}
-                        onPageChange={handleChangePage}
-                        onRowsPerPageChange={handleChangeRowsPerPage}
-                    />
-                </Card>
-            </Container>
-        </Page>
-    );
 }

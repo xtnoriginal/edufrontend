@@ -2,7 +2,7 @@ import * as Yup from 'yup';
 import { useState } from 'react';
 import { Link as RouterLink, useNavigate } from 'react-router-dom';
 import { useFormik, Form, FormikProvider } from 'formik';
-import {setUserSession} from "../../../services/common";
+import {getAccessTokenAvailable, setUserSession} from "../../../services/common";
 // material
 import {
   Link,
@@ -17,10 +17,17 @@ import { LoadingButton } from '@mui/lab';
 // component
 import Iconify from '../../../components/Iconify';
 import axios from "axios";
+import qs from "qs";
 
 // ----------------------------------------------------------------------
 
 export default function LoginForm() {
+
+ /* if(getAccessTokenAvailable()){
+    navigate('/app', { replace: true });
+  }*/
+
+
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
 
@@ -37,14 +44,25 @@ export default function LoginForm() {
     },
     validationSchema: LoginSchema,
     onSubmit: () => {
-      axios.post('http://localhost:8080/auth/login', {
-        email: values.email,
+
+      const data = {
+        username: values.email,
         password: values.password
-      })
+      };
+      const options = {
+        method: 'POST',
+        headers: { 'content-type': 'application/x-www-form-urlencoded' },
+        data: qs.stringify(data),
+        url: 'http://localhost:8080/api/login',
+
+      };
+      axios(options)
+
           .then(function (response) {
 
-            console.log(response.data.token);
-            setUserSession(response.data.token, response.data.user,response.data.email)
+            console.log(response.data.access_token);
+            console.log(response.data.refresh_token);
+            setUserSession(response.data.access_token,response.data.refresh_token, "Claudious","Nhemwa")
             formik.setSubmitting(false);
             navigate('/app', { replace: true });
             console.log(response);
@@ -54,7 +72,7 @@ export default function LoginForm() {
 
             if(error.response.status === 401 || error.response.status === 403 ){
               formik.setFieldError('password','invalid password or username')
-              formik.setFieldError('email','')
+              formik.setFieldError('username','')
 
               console.log(error);
 

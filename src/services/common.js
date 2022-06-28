@@ -7,8 +7,19 @@ export const getUser = () => {
 }
 
 // return the token from the session storage
-export const getToken = () => {
-    return sessionStorage.getItem('token') || null;
+export const getAccessToken = () => {
+    return sessionStorage.getItem('access_token') || null;
+}
+
+// return true if access token is not equal to null
+export const getAccessTokenAvailable = () => {
+
+    let token = sessionStorage.getItem('access_token') || null;
+    if(token == null){
+        return false;
+    }
+
+    return true;
 }
 
 export const getEmail = () => {
@@ -23,8 +34,12 @@ export const removeUserSession = () => {
 }
 
 // set the token and user from the session storage
-export const setUserSession = (token, user,email) => {
-    sessionStorage.setItem('token', token);
+export const setUserSession = (access_token,refresh_token, user,email) => {
+    sessionStorage.setItem('access_token', access_token);
+    sessionStorage.setItem('refresh_token', access_token);
     sessionStorage.setItem('user', JSON.stringify(user));
     sessionStorage.setItem('user', JSON.stringify(email));
 }
+
+
+
