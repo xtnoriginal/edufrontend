@@ -23,6 +23,7 @@ import {getAccessToken} from "../../services/common";
 
 
 const TABLE_HEAD = [
+    {id: ''},
     { id: 'title', label: 'Title', alignRight: false },
     { id: 'subject', label: 'Subject', alignRight: false },
     { id: 'score', label: 'Score', alignRight: false },
@@ -114,7 +115,7 @@ export default  class  SubjectList extends Component{
                                                 role="checkbox"
                                                 onClick={this.handleClick}
                                             >
-
+                                                <TableCell align="left"></TableCell>
                                                 <TableCell component="th" scope="row" padding="none">
                                                     <Stack direction="row" alignItems="center" spacing={2}>
                                                         <Typography variant="subtitle2" noWrap>
@@ -125,6 +126,7 @@ export default  class  SubjectList extends Component{
                                                 <TableCell align="left">{subject}</TableCell>
                                                 <TableCell align="left">{score}</TableCell>
                                                 <TableCell align="left">{status ? 'Yes' : 'No'}</TableCell>
+                                                <TableCell align="left"></TableCell>
 
                                             </TableRow>
 
@@ -135,7 +137,7 @@ export default  class  SubjectList extends Component{
                                      { this.state.papers.length === 0  &&  <TableBody>
                                             <TableRow>
                                                 <TableCell align="center" colSpan={6} sx={{ py: 3 }}>
-                                                    <SearchNotFound searchQuery="yes" />
+                                                    <SearchNotFound searchQuery="Physics" />
                                                 </TableCell>
                                             </TableRow>
                                         </TableBody> }
