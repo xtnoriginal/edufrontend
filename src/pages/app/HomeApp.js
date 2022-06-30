@@ -38,7 +38,7 @@ export default class HomeApp extends Component{
 
     render(){
         return (
-            <Page title=" | Home">
+            <Page title="Home | Eduproject">
                 <Container maxWidth="xl">
 
 

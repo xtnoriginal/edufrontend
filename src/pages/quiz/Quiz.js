@@ -186,7 +186,7 @@ export default class Quiz extends React.Component{
                                                 <Typography variant="h6">{item.question}</Typography>
 
                                                 { item.answers != null?
-                                                    <FormControl sx={{marginTop: 5, marginBottom: 5}}>
+                                                    <FormControl sx={{amarginTop: 5, marginBottom: 5}}>
                                                         <FormLabel id="answerslabel">Answers</FormLabel>
                                                         <RadioGroup
                                                             aria-labelledby="demo-radio-buttons-group-label"

@@ -50,7 +50,7 @@ export default function Router() {
         { path: 'blog', element: <Blog /> },
         { path: 'subject/:id', element: <SubjectList/> },
         { path: 'quiz', element: <Quiz/> },
-        { path: 'startquiz', element: <StartQuiz/> },
+        { path: 'startquiz/:subject/:id', element: <StartQuiz/> },
         { path: 'profile', element: <Profile/> },
         { path: 'settings', element: <Settings/> },
 

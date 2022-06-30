@@ -5,6 +5,7 @@ import { Container,  Typography } from '@mui/material';
 import Page from "../../components/Page";
 import axios from "axios";
 import Comments from "../../sections/@dashboard/blog/Comments";
+import {getAccessToken} from "../../services/common";
 
 
 // components
@@ -21,10 +22,9 @@ export default class BlogPost extends Component{
     }
 
     componentDidMount() {
-        axios.get("http://localhost:8080/api/blog/article/National%20Basketball")
+        axios.get("http://localhost:8080/api/blog/article")
             .then(res => {
                 const blogpost = res.data;
-
                 this.setState({blogpost });
             })
     }

@@ -6,8 +6,12 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import { Radio} from "@mui/material";
+import {Radio, RadioGroup} from "@mui/material";
+import FormControl from "@mui/material/FormControl";
 
+
+
+//TODO fix the Radio group alignment error
 
 const rows = [
     { "person": "A", "route": "runs across the beach, then climbs the ladder", "time_taken_s": 8},
@@ -36,25 +40,39 @@ export default function AcccessibleTable() {
                 </TableHead>
                 <TableBody>
 
-                    <TableCell align="left">
-                        <Radio value="A"/>
-                    </TableCell>
-                    {rows.map((row) => {
-                        const column = Object.keys(row);
-                        return(
-                            <TableRow>
+                    <RadioGroup
+                        aria-labelledby="demo-radio-buttons-group-label"
+                        name="radio-buttons-group"
 
-                                {column.map((value) => {
-                                    return(
+                    >
+                        {rows.map((row) => {
+                            const column = Object.keys(row);
+                            const letters = ['A','B','C','D'];
+                            let pos =0;
+                            return(
 
-                                        <TableCell align="left">{row[value]}</TableCell>
-                                    )
 
-                                })}
-                            </TableRow>
+                                <TableRow>
 
-                        )
-                    })}
+                                    <TableCell align="left">
+                                        <Radio value={letters[pos++]}/>
+                                        <h1>{pos}</h1>
+                                    </TableCell>
+
+                                    {column.map((value) => {
+                                        return(
+
+                                            <TableCell align="left">{row[value]}</TableCell>
+                                        )
+
+                                    })}
+                                </TableRow>
+
+                            )
+                        })}
+
+                    </RadioGroup>
+
 
 
                 </TableBody>

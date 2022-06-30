@@ -1,4 +1,4 @@
-import { Link as RouterLink } from 'react-router-dom';
+import {Link as RouterLink, useParams} from 'react-router-dom';
 // material
 import { Button, Container, Stack, Typography, CardContent, Card} from '@mui/material';
 
@@ -18,12 +18,17 @@ const instructions = ["1) The examination will consist of 40 questions."
     ,"4) Please make sure you have a good and stable internet connection and power source. The coding challenge cannot be paused once it begins."
 ]
 
+//TODO study relation of back end and quiz and redesign
+
 
 export default function StartQuiz() {
     //const subject = this.props.subject;
 
+    // Get subject name and papername
+    const  params  = useParams();
+
     return (
-        <Page title="Dashboard: Blog | Minimal-UI">
+        <Page title="Start Quiz | Eduproject">
             <Container>
 
 
@@ -48,7 +53,7 @@ export default function StartQuiz() {
                             <Button
                                 variant="outlined"
                                 component={RouterLink}
-                                to="/app/{+}"
+                                to={"/app/subject/"+ params.subject}
                             >
                                 Back
                             </Button>

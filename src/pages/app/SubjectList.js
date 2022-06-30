@@ -2,7 +2,7 @@ import {Component} from "react";
 import Page from "../../components/Page";
 import {
     Card,
-    Container,
+    Container, Link,
     Stack,
     Table,
     TableBody,
@@ -18,6 +18,7 @@ import SearchNotFound from "../../components/SearchNotFound";
 import SubjectListHead from "../../sections/app/subject/SubjectListHead";
 import axios from "axios";
 import {getAccessToken} from "../../services/common";
+import {Link as RouterLink, useParams} from "react-router-dom";
 
 
 
@@ -34,6 +35,8 @@ const TABLE_HEAD = [
 
 
 
+//TODO allow on click to start quiz
+
 
 export default  class  SubjectList extends Component{
 
@@ -42,11 +45,12 @@ export default  class  SubjectList extends Component{
         papers:[],
         page : 0,
         rowsPerPage:5
+
     }
 
     componentDidMount() {
 
-        const  link = "http://localhost:8080/app/subject/physics";
+        const  link = "http://localhost:8080/app/subject/Physics";
         axios.get(link,{
             headers: {
                 Authorization: `Bearer ${getAccessToken()}`
@@ -68,10 +72,11 @@ export default  class  SubjectList extends Component{
         this.setState({page:newPage});
     };
 
-
     handleClick = (event, name) => {
         //const selectedIndex = selected.indexOf(name);
-        //useNavigate("/app/startquiz",{replace:true});
+
+
+        console.log("yes");
     };
 
 
@@ -80,10 +85,8 @@ export default  class  SubjectList extends Component{
 
 
 
-
-
         return(
-            <Page title="User">
+            <Page title="Subject List | Eduproject">
                 <Container>
                     <Stack direction="row" alignItems="center" justifyContent="space-between" mb={5}>
                         <Typography variant="h4" gutterBottom>
@@ -106,14 +109,14 @@ export default  class  SubjectList extends Component{
 
                                  {this.state.papers.slice(this.state.page *this.state.rowsPerPage, this.state.page * this.state.rowsPerPage + this.state.rowsPerPage).map((row) => {
                                         const {id, title, subject, score, status} = row;
+                                        const  link  = '/app/startquiz/'+subject+'/'+id;
                                         return(
-
+                                            <Link align='none' underline='none' to={link} component={RouterLink}>
                                             <TableRow
                                                 hover
                                                 key={id}
                                                 tabIndex={-1}
                                                 role="checkbox"
-                                                onClick={this.handleClick}
                                             >
                                                 <TableCell align="left"></TableCell>
                                                 <TableCell component="th" scope="row" padding="none">
@@ -129,6 +132,7 @@ export default  class  SubjectList extends Component{
                                                 <TableCell align="left"></TableCell>
 
                                             </TableRow>
+                                            </Link>
 
                                         );
                                     })}
