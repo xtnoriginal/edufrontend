@@ -30,7 +30,7 @@ class Home extends React.Component{
                             </Typography>
                             <Button  to="/register" variant="outlined" sx={{marginTop:3}} component={RouterLink}> Register</Button>
                         </div>
-                        <img alt="register" src="/static/illustrations/illustration_avatar.png" />
+                        <img alt="register" src="/static/illustrations/illustrations_school4.png" />
                     </Grid>
 
                     <Typography variant="h4" sx={{ mb: 5 }}>

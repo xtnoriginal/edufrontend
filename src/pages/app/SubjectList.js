@@ -111,7 +111,7 @@ export default  class  SubjectList extends Component{
                                         const {id, title, subject, score, status} = row;
                                         const  link  = '/app/startquiz/'+subject+'/'+id;
                                         return(
-                                            <Link align='none' underline='none' to={link} component={RouterLink}>
+                                            <Link underline='none' to={link} component={RouterLink}>
                                             <TableRow
                                                 hover
                                                 key={id}
